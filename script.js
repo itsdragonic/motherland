@@ -1,59 +1,65 @@
-
 var canvas = document.getElementsByTagName('canvas')[0];
 canvas.width = 800;
 canvas.height = 600;
 
-var map_empty = new Image;
+var map_empty = new Image();
 map_empty.src = 'maps/map_empty.png';
 
-var map_provinces = new Image;
+var map_provinces = new Image();
 map_provinces.src = 'maps/map_provinces.png';
 
 window.onload = function () {
 
     var ctx = canvas.getContext('2d');
     trackTransforms(ctx);
-    ctx.imageSmoothingEnabled = false;
 
-    // Create an off-screen canvas for pre-rendering the map
+    // Off-screen canvas matches image size
     var offscreenCanvas = document.createElement('canvas');
-    offscreenCanvas.width = canvas.width;
-    offscreenCanvas.height = canvas.height;
+    offscreenCanvas.width = map_empty.width;
+    offscreenCanvas.height = map_empty.height;
     var offscreenCtx = offscreenCanvas.getContext('2d');
 
     function redraw() {
+        const currentScale = ctx.getTransform().a; // current zoom
 
+        // Turn smoothing on/off depending on zoom
+        if (currentScale < 1) {
+            ctx.imageSmoothingEnabled = true;
+        } else {
+            ctx.imageSmoothingEnabled = false;
+        }
+
+        // raw map
         drawMap(offscreenCtx);
-
-        // Clear the entire canvas
-        var p1 = ctx.transformedPoint(0, 0);
-        var p2 = ctx.transformedPoint(canvas.width, canvas.height);
-        ctx.clearRect(p1.x, p1.y, p2.x - p1.x, p2.y - p1.y);
 
         ctx.save();
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.restore();
 
+        // special additions to map
+        ctx.drawImage(map_empty, 0, 0);
+        ctx.filter = 'blur(5px)';
+        ctx.drawImage(offscreenCanvas, 0, 0);
+        ctx.filter = 'none';
         ctx.drawImage(offscreenCanvas, 0, 0);
     }
     redraw();
 
     var lastX = canvas.width / 2, lastY = canvas.height / 2;
-
     var dragStart, dragged;
 
     canvas.addEventListener('mousedown', function (evt) {
-        document.body.style.mozUserSelect = document.body.style.webkitUserSelect = document.body.style.userSelect = 'none';
-        lastX = evt.offsetX || (evt.pageX - canvas.offsetLeft);
-        lastY = evt.offsetY || (evt.pageY - canvas.offsetTop);
+        document.body.style.userSelect = 'none';
+        lastX = evt.offsetX;
+        lastY = evt.offsetY;
         dragStart = ctx.transformedPoint(lastX, lastY);
         dragged = false;
     }, false);
 
     canvas.addEventListener('mousemove', function (evt) {
-        lastX = evt.offsetX || (evt.pageX - canvas.offsetLeft);
-        lastY = evt.offsetY || (evt.pageY - canvas.offsetTop);
+        lastX = evt.offsetX;
+        lastY = evt.offsetY;
         dragged = true;
         if (dragStart) {
             var pt = ctx.transformedPoint(lastX, lastY);
@@ -62,27 +68,39 @@ window.onload = function () {
         }
     }, false);
 
-    canvas.addEventListener('mouseup', function (evt) {
+    canvas.addEventListener('mouseup', function () {
         dragStart = null;
-        if (!dragged) zoom(evt.shiftKey ? -1 : 1);
+        if (!dragged) zoom(1);
     }, false);
 
     var scaleFactor = 1.1;
 
-    var zoom = function (clicks) {
+    function zoom(clicks) {
         var pt = ctx.transformedPoint(lastX, lastY);
         ctx.translate(pt.x, pt.y);
         var factor = Math.pow(scaleFactor, clicks);
+
+        // --- prevent zooming out too far ---
+        var boundsScale = Math.min(
+            canvas.width / map_empty.width,
+            canvas.height / map_empty.height
+        );
+        var currentScale = ctx.getTransform().a;
+        if (factor * currentScale < boundsScale) {
+            factor = boundsScale / currentScale;
+        }
+        // -----------------------------------
+
         ctx.scale(factor, factor);
         ctx.translate(-pt.x, -pt.y);
         redraw();
     }
 
-    var handleScroll = function (evt) {
-        var delta = evt.wheelDelta ? evt.wheelDelta / 40 : evt.detail ? -evt.detail : 0;
+    function handleScroll(evt) {
+        var delta = evt.wheelDelta ? evt.wheelDelta / 40 : -evt.detail;
         if (delta) zoom(delta);
-        return evt.preventDefault() && false;
-    };
+        evt.preventDefault();
+    }
 
     canvas.addEventListener('DOMMouseScroll', handleScroll, false);
     canvas.addEventListener('mousewheel', handleScroll, false);
