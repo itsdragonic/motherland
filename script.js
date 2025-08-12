@@ -15,7 +15,15 @@ window.onload = function () {
     trackTransforms(ctx);
     ctx.imageSmoothingEnabled = false;
 
+    // Create an off-screen canvas for pre-rendering the map
+    var offscreenCanvas = document.createElement('canvas');
+    offscreenCanvas.width = canvas.width;
+    offscreenCanvas.height = canvas.height;
+    var offscreenCtx = offscreenCanvas.getContext('2d');
+
     function redraw() {
+
+        drawMap(offscreenCtx);
 
         // Clear the entire canvas
         var p1 = ctx.transformedPoint(0, 0);
@@ -27,7 +35,7 @@ window.onload = function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.restore();
 
-        drawMap(ctx);
+        ctx.drawImage(offscreenCanvas, 0, 0);
     }
     redraw();
 
