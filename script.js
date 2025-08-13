@@ -71,9 +71,9 @@ window.onload = function () {
         }
     }, false);
 
-    canvas.addEventListener('mouseup', function () {
+    canvas.addEventListener('mouseup', function (evt) {
         dragStart = null;
-        if (!dragged) zoom(1);
+        if (!dragged) clickProvince(ctx,evt);
     }, false);
 
     var scaleFactor = 1.1;
