@@ -1,3 +1,8 @@
+let player = {
+    nation: "rome",
+    ethnicity: "romans",
+}
+
 function clickProvince(ctx, evt) {
     // 1. Get clicked position in canvas coordinates
     const pt = ctx.transformedPoint(evt.offsetX, evt.offsetY);
@@ -35,9 +40,16 @@ function clickProvince(ctx, evt) {
     
     // 6. Handle the clicked province
     if (clickedProvinceId) {
-        if (isTileAdjacent(clickedProvinceId, "rome")) {
-            changeOwner(clickedProvinceId, "rome");
+        if (display_map == 'owner') {
+            if (isTileAdjacent(clickedProvinceId, player.nation)) {
+                changeOwner(clickedProvinceId, player.nation);
+            }
+        } else if (display_map == 'ethnicity') {
+            if (isTileAdjacent(clickedProvinceId, player.ethnicity)) {
+                changeOwner(clickedProvinceId, player.ethnicity);
+            }
         }
+        
         //console.log(clickedProvinceId);
     } else {
         //console.log("No province clicked at", clickX, clickY);
@@ -48,7 +60,8 @@ function isTileAdjacent(id, nation) {
     let neighbors = provinceData[id].neighbors;
 
     for (let i = 0; i < neighbors.length; i ++) {
-        if (provinceInfo[neighbors[i]].owner == nation) return true;
+        if (display_map == 'owner' && provinceInfo[neighbors[i]].owner == nation) return true;
+        else if (display_map == 'ethnicity' && provinceInfo[neighbors[i]].ethnicity == nation) return true;
     }
     return false;
 }

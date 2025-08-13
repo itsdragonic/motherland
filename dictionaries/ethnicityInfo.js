@@ -17,7 +17,7 @@ const ethnicityInfo = {
     },
     "dacians": {
         "name": "Dacians",
-        "color": "#01093c",
+        "color": "#282d50",
     },
     "gauls": {
         "name": "Gauls",
