@@ -142,7 +142,9 @@ let provinceInfo = {
   "141": {},
   "142": {},
   "143": {},
-  "144": {},
+  "144": {
+    "ethnicity": "germans"
+  },
   "145": {},
   "146": {},
   "147": {},
@@ -157,7 +159,9 @@ let provinceInfo = {
   "156": {},
   "157": {},
   "158": {},
-  "159": {},
+  "159": {
+    "ethnicity": "germans"
+  },
   "160": {},
   "161": {},
   "162": {},
@@ -174,9 +178,13 @@ let provinceInfo = {
   "173": {},
   "174": {},
   "175": {},
-  "176": {},
+  "176": {
+    "ethnicity": "germans"
+  },
   "177": {},
-  "178": {},
+  "178": {
+    "ethnicity": "germans"
+  },
   "179": {},
   "180": {},
   "181": {},
@@ -185,7 +193,9 @@ let provinceInfo = {
   "184": {},
   "185": {},
   "186": {},
-  "187": {},
+  "187": {
+    "ethnicity": "germans"
+  },
   "188": {},
   "189": {},
   "190": {},
@@ -193,260 +203,408 @@ let provinceInfo = {
   "192": {},
   "193": {},
   "194": {},
-  "195": {},
-  "196": {},
+  "195": {
+    "ethnicity": "germans"
+  },
+  "196": {
+    "ethnicity": "germans"
+  },
   "197": {},
   "198": {},
   "199": {},
-  "200": {},
+  "200": {
+    "ethnicity": "germans"
+  },
   "201": {},
   "202": {},
-  "203": {},
+  "203": {
+    "ethnicity": "germans"
+  },
   "204": {},
   "205": {},
-  "206": {},
+  "206": {
+    "ethnicity": "germans"
+  },
   "207": {},
   "208": {},
   "209": {},
-  "210": {},
+  "210": {
+    "ethnicity": "germans"
+  },
   "211": {},
   "212": {},
-  "213": {},
+  "213": {
+    "ethnicity": "germans"
+  },
   "214": {},
   "215": {},
   "216": {},
-  "217": {},
+  "217": {
+    "ethnicity": "germans"
+  },
   "218": {},
   "219": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
-  "220": {},
+  "220": {
+    "ethnicity": "germans"
+  },
   "221": {},
   "222": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
   "223": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
   "224": {},
   "225": {},
   "226": {},
   "227": {},
   "228": {},
-  "229": {},
+  "229": {
+    "ethnicity": "germans"
+  },
   "230": {},
   "231": {},
   "232": {},
   "233": {},
   "234": {},
   "235": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
-  "236": {},
+  "236": {
+    "ethnicity": "germans"
+  },
   "237": {},
   "238": {},
-  "239": {},
+  "239": {
+    "ethnicity": "germans"
+  },
   "240": {},
-  "241": {},
+  "241": {
+    "ethnicity": "germans"
+  },
   "242": {},
   "243": {},
-  "244": {},
+  "244": {
+    "ethnicity": "germans"
+  },
   "245": {},
   "246": {},
-  "247": {},
+  "247": {
+    "ethnicity": "germans"
+  },
   "248": {},
   "249": {},
-  "250": {},
-  "251": {
-    "owner": "rome"
+  "250": {
+    "ethnicity": "germans"
   },
-  "252": {},
-  "253": {},
-  "254": {},
+  "251": {
+    "owner": "rome",
+    "ethnicity": "germans"
+  },
+  "252": {
+    "ethnicity": "germans"
+  },
+  "253": {
+    "ethnicity": "germans"
+  },
+  "254": {
+    "ethnicity": "germans"
+  },
   "255": {},
   "256": {},
   "257": {},
-  "258": {},
+  "258": {
+    "ethnicity": "germans"
+  },
   "259": {},
   "260": {},
   "261": {},
   "262": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
   "263": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
   "264": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
   "265": {},
-  "266": {},
-  "267": {},
+  "266": {
+    "ethnicity": "germans"
+  },
+  "267": {
+    "ethnicity": "germans"
+  },
   "268": {},
   "269": {},
   "270": {},
-  "271": {},
-  "272": {},
-  "273": {},
+  "271": {
+    "ethnicity": "germans"
+  },
+  "272": {
+    "ethnicity": "germans"
+  },
+  "273": {
+    "ethnicity": "germans"
+  },
   "274": {},
-  "275": {},
+  "275": {
+    "ethnicity": "germans"
+  },
   "276": {},
   "277": {},
   "278": {},
   "279": {},
   "280": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "281": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "282": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "283": {},
-  "284": {},
-  "285": {},
+  "284": {
+    "ethnicity": "germans"
+  },
+  "285": {
+    "ethnicity": "germans"
+  },
   "286": {},
   "287": {},
-  "288": {},
+  "288": {
+    "ethnicity": "germans"
+  },
   "289": {},
-  "290": {},
+  "290": {
+    "ethnicity": "germans"
+  },
   "291": {},
-  "292": {},
+  "292": {
+    "ethnicity": "germans"
+  },
   "293": {},
   "294": {},
   "295": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "296": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "297": {},
+  "297": {
+    "ethnicity": "germans"
+  },
   "298": {},
-  "299": {},
-  "300": {},
+  "299": {
+    "ethnicity": "germans"
+  },
+  "300": {
+    "ethnicity": "germans"
+  },
   "301": {},
   "302": {},
-  "303": {},
+  "303": {
+    "ethnicity": "germans"
+  },
   "304": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "305": {},
   "306": {},
   "307": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "308": {},
+  "308": {
+    "ethnicity": "germans"
+  },
   "309": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
-  "310": {},
-  "311": {},
+  "310": {
+    "ethnicity": "germans"
+  },
+  "311": {
+    "ethnicity": "germans"
+  },
   "312": {},
   "313": {},
   "314": {},
   "315": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
-  "316": {},
+  "316": {
+    "ethnicity": "germans"
+  },
   "317": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "318": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "319": {},
+  "319": {
+    "ethnicity": "germans"
+  },
   "320": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "321": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "322": {},
+  "322": {
+    "ethnicity": "germans"
+  },
   "323": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
-  "324": {},
+  "324": {
+    "ethnicity": "germans"
+  },
   "325": {},
   "326": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
   "327": {},
   "328": {},
   "329": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "330": {},
+  "330": {
+    "ethnicity": "germans"
+  },
   "331": {},
   "332": {},
-  "333": {},
-  "334": {},
+  "333": {
+    "ethnicity": "germans"
+  },
+  "334": {
+    "ethnicity": "germans"
+  },
   "335": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "336": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "337": {},
-  "338": {},
+  "337": {
+    "ethnicity": "germans"
+  },
+  "338": {
+    "ethnicity": "germans"
+  },
   "339": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "340": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "341": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "342": {},
   "343": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
-  "344": {},
+  "344": {
+    "ethnicity": "germans"
+  },
   "345": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
-  "346": {},
+  "346": {
+    "ethnicity": "germans"
+  },
   "347": {},
   "348": {
     "owner": "rome"
   },
-  "349": {},
+  "349": {
+    "ethnicity": "germans"
+  },
   "350": {},
   "351": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "352": {},
   "353": {},
   "354": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "355": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
-  "356": {},
+  "356": {
+    "ethnicity": "germans"
+  },
   "357": {},
   "358": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "359": {},
+  "359": {
+    "ethnicity": "germans"
+  },
   "360": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "361": {},
+  "361": {
+    "ethnicity": "dacians"
+  },
   "362": {},
-  "363": {},
+  "363": {
+    "ethnicity": "germans"
+  },
   "364": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "365": {
     "owner": "rome"
   },
   "366": {},
   "367": {},
-  "368": {},
+  "368": {
+    "ethnicity": "germans"
+  },
   "369": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "germans"
   },
   "370": {
     "owner": "rome"
@@ -454,30 +612,43 @@ let provinceInfo = {
   "371": {},
   "372": {},
   "373": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "374": {},
-  "375": {},
+  "375": {
+    "ethnicity": "dacians"
+  },
   "376": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "377": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "378": {
     "owner": "rome"
   },
-  "379": {},
+  "379": {
+    "ethnicity": "dacians"
+  },
   "380": {},
   "381": {},
   "382": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "383": {},
+  "383": {
+    "ethnicity": "dacians"
+  },
   "384": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "385": {},
+  "385": {
+    "ethnicity": "dacians"
+  },
   "386": {},
   "387": {},
   "388": {
@@ -485,12 +656,16 @@ let provinceInfo = {
   },
   "389": {},
   "390": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "391": {},
-  "392": {},
+  "392": {
+    "ethnicity": "dacians"
+  },
   "393": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "394": {},
   "395": {
@@ -500,36 +675,48 @@ let provinceInfo = {
   "397": {},
   "398": {},
   "399": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "400": {
     "owner": "rome"
   },
   "401": {},
-  "402": {},
+  "402": {
+    "ethnicity": "dacians"
+  },
   "403": {},
   "404": {
     "owner": "rome"
   },
-  "405": {},
+  "405": {
+    "ethnicity": "dacians"
+  },
   "406": {
     "owner": "rome"
   },
   "407": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "408": {},
-  "409": {},
+  "409": {
+    "ethnicity": "dacians"
+  },
   "410": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "411": {},
   "412": {},
   "413": {},
   "414": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "415": {},
+  "415": {
+    "ethnicity": "dacians"
+  },
   "416": {
     "owner": "rome"
   },
@@ -537,79 +724,112 @@ let provinceInfo = {
     "owner": "rome"
   },
   "418": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "419": {},
-  "420": {},
+  "419": {
+    "ethnicity": "dacians"
+  },
+  "420": {
+    "ethnicity": "greeks"
+  },
   "421": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "422": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "423": {},
+  "423": {
+    "ethnicity": "germans"
+  },
   "424": {},
   "425": {},
   "426": {},
   "427": {},
   "428": {},
-  "429": {},
+  "429": {
+    "ethnicity": "dacians"
+  },
   "430": {
     "owner": "rome"
   },
   "431": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "432": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "433": {
     "owner": "rome"
   },
   "434": {},
-  "435": {},
+  "435": {
+    "ethnicity": "dacians"
+  },
   "436": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "437": {},
   "438": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "439": {},
   "440": {},
   "441": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
-  "442": {},
+  "442": {
+    "ethnicity": "dacians"
+  },
   "443": {},
   "444": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "445": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "446": {
     "owner": "rome"
   },
-  "447": {},
+  "447": {
+    "ethnicity": "dacians"
+  },
   "448": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "449": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
-  "450": {},
+  "450": {
+    "ethnicity": "dacians"
+  },
   "451": {},
   "452": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "453": {},
-  "454": {},
+  "454": {
+    "ethnicity": "greeks"
+  },
   "455": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "456": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "457": {
     "owner": "rome"
@@ -617,89 +837,114 @@ let provinceInfo = {
   "458": {},
   "459": {},
   "460": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "461": {},
   "462": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "463": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "464": {
     "owner": "rome"
   },
   "465": {},
-  "466": {},
+  "466": {
+    "ethnicity": "dacians"
+  },
   "467": {},
   "468": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "469": {},
-  "470": {},
+  "470": {
+    "ethnicity": "dacians"
+  },
   "471": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "472": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "473": {
     "owner": "rome"
   },
   "474": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "475": {},
   "476": {},
   "477": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "478": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "479": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
-  "480": {},
+  "480": {
+    "ethnicity": "dacians"
+  },
   "481": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "482": {
     "owner": "rome"
   },
   "483": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "484": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "greeks"
   },
   "485": {
     "owner": "rome"
   },
   "486": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "487": {
     "owner": "rome"
   },
   "488": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "489": {},
   "490": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "491": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "492": {
     "owner": "rome"
   },
   "493": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "494": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "gauls"
   },
   "495": {},
   "496": {
@@ -709,10 +954,12 @@ let provinceInfo = {
     "owner": "rome"
   },
   "498": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "499": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "500": {},
   "501": {
@@ -722,37 +969,48 @@ let provinceInfo = {
     "owner": "rome"
   },
   "503": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "greeks"
   },
   "504": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
-  "505": {},
+  "505": {
+    "ethnicity": "dacians"
+  },
   "506": {},
   "507": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "508": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "thracians"
   },
   "509": {},
   "510": {
     "owner": "rome"
   },
   "511": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "greeks"
   },
   "512": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "513": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "514": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "515": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "thracians"
   },
   "516": {},
   "517": {},
@@ -773,7 +1031,8 @@ let provinceInfo = {
     "owner": "rome"
   },
   "524": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "greeks"
   },
   "525": {},
   "526": {},
@@ -787,7 +1046,8 @@ let provinceInfo = {
     "owner": "rome"
   },
   "530": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "531": {},
   "532": {},
@@ -807,39 +1067,49 @@ let provinceInfo = {
   },
   "539": {},
   "540": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
-  "541": {},
+  "541": {
+    "ethnicity": "armenians"
+  },
   "542": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "543": {
     "owner": "rome"
   },
   "544": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "545": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "546": {
     "owner": "rome"
   },
   "547": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "548": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "thracians"
   },
   "549": {},
   "550": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "thracians"
   },
   "551": {
     "owner": "rome"
   },
   "552": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "greeks"
   },
   "553": {},
   "554": {},
@@ -861,57 +1131,72 @@ let provinceInfo = {
     "owner": "rome"
   },
   "562": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "thracians"
   },
   "563": {},
   "564": {
     "owner": "rome"
   },
   "565": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "566": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "567": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "568": {
     "owner": "rome"
   },
   "569": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "570": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "greeks"
   },
   "571": {
     "owner": "rome"
   },
-  "572": {},
+  "572": {
+    "ethnicity": "armenians"
+  },
   "573": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "greeks"
   },
   "574": {
-    "owner": "armenia"
+    "owner": "armenia",
+    "ethnicity": "armenians"
   },
   "575": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "greeks"
   },
   "576": {
     "owner": "rome"
   },
   "577": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "578": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "579": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "armenians"
   },
   "580": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "581": {
     "owner": "rome"
@@ -920,13 +1205,16 @@ let provinceInfo = {
     "owner": "rome"
   },
   "583": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "584": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "585": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "greeks"
   },
   "586": {
     "owner": "rome"
@@ -935,29 +1223,36 @@ let provinceInfo = {
     "owner": "rome"
   },
   "588": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "589": {
-    "owner": "armenia"
+    "owner": "armenia",
+    "ethnicity": "armenians"
   },
   "590": {},
   "591": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "592": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "593": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "594": {
     "owner": "rome"
   },
   "595": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "596": {
-    "owner": "thrace"
+    "owner": "thrace",
+    "ethnicity": "greeks"
   },
   "597": {
     "owner": "rome"
@@ -966,31 +1261,40 @@ let provinceInfo = {
     "owner": "rome"
   },
   "599": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "armenians"
   },
   "600": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "601": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "602": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "armenians"
   },
   "603": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "604": {
-    "owner": "armenia"
+    "owner": "armenia",
+    "ethnicity": "armenians"
   },
   "605": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "armenians"
   },
   "606": {
-    "owner": "armenia"
+    "owner": "armenia",
+    "ethnicity": "armenians"
   },
   "607": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "608": {
     "owner": "rome"
@@ -999,85 +1303,105 @@ let provinceInfo = {
     "owner": "rome"
   },
   "610": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "611": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "612": {
-    "owner": "armenia"
+    "owner": "armenia",
+    "ethnicity": "armenians"
   },
   "613": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "614": {
     "owner": "rome"
   },
   "615": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "616": {
     "owner": "rome"
   },
   "617": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "618": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "619": {
     "owner": "rome"
   },
   "620": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "621": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "622": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "623": {
     "owner": "rome"
   },
   "624": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "625": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "armenians"
   },
   "626": {
     "owner": "rome"
   },
   "627": {
-    "owner": "armenia"
+    "owner": "armenia",
+    "ethnicity": "armenians"
   },
   "628": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "629": {
-    "owner": "armenia"
+    "owner": "armenia",
+    "ethnicity": "armenians"
   },
   "630": {
     "owner": "rome"
   },
   "631": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "632": {
-    "owner": "armenia"
+    "owner": "armenia",
+    "ethnicity": "armenians"
   },
   "633": {
-    "owner": "armenia"
+    "owner": "armenia",
+    "ethnicity": "armenians"
   },
   "634": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "635": {
     "owner": "rome"
   },
   "636": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "637": {
     "owner": "rome"
@@ -1086,53 +1410,65 @@ let provinceInfo = {
     "owner": "rome"
   },
   "639": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "640": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "641": {
     "owner": "rome"
   },
   "642": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "643": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "644": {
     "owner": "rome"
   },
   "645": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "646": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "647": {
-    "owner": "armenia"
+    "owner": "armenia",
+    "ethnicity": "armenians"
   },
   "648": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "649": {},
   "650": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "armenians"
   },
   "651": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "652": {
     "owner": "rome"
   },
   "653": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "654": {
     "owner": "rome"
   },
   "655": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "656": {
     "owner": "rome"
@@ -1141,80 +1477,105 @@ let provinceInfo = {
     "owner": "rome"
   },
   "658": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "659": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "660": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "661": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
-  "662": {},
+  "662": {
+    "ethnicity": "greeks"
+  },
   "663": {
-    "owner": "armenia"
+    "owner": "armenia",
+    "ethnicity": "armenians"
   },
   "664": {
     "owner": "rome"
   },
   "665": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "666": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "667": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "668": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "669": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "670": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "671": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "672": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "673": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "674": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "675": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "676": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "677": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "678": {
     "owner": "rome"
   },
   "679": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "680": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "681": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "682": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "683": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "684": {
     "owner": "rome"
@@ -1223,87 +1584,106 @@ let provinceInfo = {
     "owner": "rome"
   },
   "686": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "687": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "688": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "689": {
     "owner": "rome"
   },
   "690": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "691": {
     "owner": "rome"
   },
   "692": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "693": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "694": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "695": {
     "owner": "rome"
   },
   "696": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "697": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "698": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "699": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "700": {
     "owner": "rome"
   },
   "701": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "702": {
     "owner": "rome"
   },
   "703": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "704": {
     "owner": "rome"
   },
   "705": {},
   "706": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "707": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "708": {
     "owner": "rome"
   },
   "709": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "710": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "711": {
     "owner": "rome"
   },
   "712": {},
   "713": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "714": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "715": {
     "owner": "rome"
@@ -1312,39 +1692,48 @@ let provinceInfo = {
     "owner": "rome"
   },
   "717": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "718": {},
   "719": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "720": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "721": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "722": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "723": {
     "owner": "rome"
   },
   "724": {},
   "725": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "726": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "727": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "728": {
     "owner": "rome"
   },
   "729": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "730": {
     "owner": "rome"
@@ -1356,39 +1745,46 @@ let provinceInfo = {
     "owner": "rome"
   },
   "733": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "734": {},
   "735": {
     "owner": "rome"
   },
   "736": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "737": {},
   "738": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "739": {
     "owner": "rome"
   },
   "740": {},
   "741": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "742": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "743": {
     "owner": "rome"
   },
   "744": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "745": {},
   "746": {},
   "747": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "748": {},
   "749": {},
@@ -1402,31 +1798,39 @@ let provinceInfo = {
     "owner": "rome"
   },
   "757": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "758": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "759": {},
   "760": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "761": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "762": {},
   "763": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "764": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "765": {},
   "766": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "767": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "768": {},
   "769": {},
@@ -1434,30 +1838,36 @@ let provinceInfo = {
   "771": {},
   "772": {},
   "773": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "romans"
   },
   "774": {},
   "775": {
     "owner": "rome"
   },
   "776": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "777": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "778": {},
   "779": {
-    "owner": "rome"
+    "owner": "rome",
+    "ethnicity": "greeks"
   },
   "780": {},
   "781": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "782": {},
   "783": {},
   "784": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "785": {
     "owner": "parthia"
@@ -1476,7 +1886,8 @@ let provinceInfo = {
   "791": {},
   "792": {},
   "793": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "794": {},
   "795": {},
@@ -1487,17 +1898,20 @@ let provinceInfo = {
     "owner": "rome"
   },
   "798": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "799": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "800": {
     "owner": "rome"
   },
   "801": {},
   "802": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "803": {},
   "804": {},
@@ -1510,7 +1924,8 @@ let provinceInfo = {
   },
   "808": {},
   "809": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "810": {
     "owner": "parthia"
@@ -1527,7 +1942,8 @@ let provinceInfo = {
   },
   "815": {},
   "816": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "ethnicity": "parthians"
   },
   "817": {
     "owner": "rome"

@@ -33,7 +33,9 @@ function generateProvinceOverlay() {
         };
     }
 
-    // fill each province according to its owner color
+    // fill each province according to its assigned value
+    let displayProperty = 'ethnicity';
+
     for (const id in provinceData) {
         if (!Object.prototype.hasOwnProperty.call(provinceData, id)) continue;
         const pd = provinceData[id];
@@ -41,18 +43,29 @@ function generateProvinceOverlay() {
 
         const [startX, startY] = pd.pos.map(Math.floor);
         const pInfo = provinceInfo[id];
-        if (!pInfo || !pInfo.owner) continue;
+        if (!pInfo || !pInfo[displayProperty]) continue;
 
-        const nation = nationInfo[pInfo.owner];
-        if (!nation || !nation.color) continue;
+        let colorSource = null;
 
-        const rgb = hexToRgb(nation.color);
+        if (displayProperty === 'owner') {
+            const nation = nationInfo[pInfo.owner];
+            if (!nation || !nation.color) continue;
+            colorSource = nation.color;
+        } 
+        else if (displayProperty === 'ethnicity') {
+            const ethnicity = ethnicityInfo[pInfo.ethnicity];
+            if (!ethnicity || !ethnicity.color) continue;
+            colorSource = ethnicity.color;
+        }
+
+        const rgb = hexToRgb(colorSource);
         if (!rgb) continue;
 
         if (startX < 0 || startX >= tempCanvas.width || startY < 0 || startY >= tempCanvas.height) continue;
 
         floodFill(tempCtx, startX, startY, [rgb.r, rgb.g, rgb.b, 255]);
     }
+
 
     // final touches
     //tempCtx.filter = 'blur(3px)';
