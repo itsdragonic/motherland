@@ -20,21 +20,6 @@ function generateProvinceOverlay() {
     tempCtx.clearRect(0, 0, tempCanvas.width, tempCanvas.height);
     tempCtx.drawImage(map_provinces, 0, 0);
 
-    function hexToRgb(hex) {
-        if (!hex) return null;
-        hex = hex.replace(/^#/, '');
-        if (hex.length === 3) {
-            hex = hex.split('').map(c => c + c).join('');
-        }
-        if (hex.length !== 6) return null;
-        const intVal = parseInt(hex, 16);
-        return {
-            r: (intVal >> 16) & 255,
-            g: (intVal >> 8) & 255,
-            b: intVal & 255
-        };
-    }
-
     // fill each province according to its assigned value
 
     for (const id in provinceData) {

@@ -19,7 +19,7 @@ window.onload = function () {
     offscreenCanvas.height = map_empty.height;
     var offscreenCtx = offscreenCanvas.getContext('2d');
 
-    function redraw() {
+    window.redraw = function() {
         const currentScale = ctx.getTransform().a; // current zoom
 
         // Turn smoothing on/off depending on zoom
