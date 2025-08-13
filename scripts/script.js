@@ -52,6 +52,11 @@ window.onload = function () {
     var lastX = canvas.width / 2, lastY = canvas.height / 2;
     var dragStart, dragged;
 
+    document.getElementById('map_select').addEventListener('change', async (e) => {
+        display_map = e.target.value;
+        redraw();
+    });
+
     canvas.addEventListener('mousedown', function (evt) {
         document.body.style.userSelect = 'none';
         lastX = evt.offsetX;

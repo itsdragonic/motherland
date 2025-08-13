@@ -1,10 +1,11 @@
-let cachedProvinceOverlay = null; // cache
+let cache_nation_map = null;
+let cache_ethnic_map = null;
 let zoomedIn = 3.5;
-let displayProperty = 'owner';
+let display_map = 'owner';
 
-function generateProvinceOverlay() {
+function generateProvinceOverlay(cache = null) {
     // return cached result if available
-    if (cachedProvinceOverlay) return cachedProvinceOverlay;
+    if (cache) return cache;
 
     // check if provinceData, provinceInfo, and nationInfo exist and have content
     if (!provinceData || !provinceInfo || !nationInfo || Object.keys(provinceData).length === 0) {
@@ -29,16 +30,16 @@ function generateProvinceOverlay() {
 
         const [startX, startY] = pd.pos.map(Math.floor);
         const pInfo = provinceInfo[id];
-        if (!pInfo || !pInfo[displayProperty]) continue;
+        if (!pInfo || !pInfo[display_map]) continue;
 
         let colorSource = null;
 
-        if (displayProperty === 'owner') {
+        if (display_map === 'owner') {
             const nation = nationInfo[pInfo.owner];
             if (!nation || !nation.color) continue;
             colorSource = nation.color;
         } 
-        else if (displayProperty === 'ethnicity') {
+        else if (display_map === 'ethnicity') {
             const ethnicity = ethnicityInfo[pInfo.ethnicity];
             if (!ethnicity || !ethnicity.color) continue;
             colorSource = ethnicity.color;
@@ -56,29 +57,35 @@ function generateProvinceOverlay() {
     // final touches
     //tempCtx.filter = 'blur(3px)';
     tempCtx.drawImage(tempCanvas, 0, 0);
-    tempCtx.filter = 'none';
+    //tempCtx.filter = 'none';
 
-    cachedProvinceOverlay = tempCanvas; // store in cache
-    return cachedProvinceOverlay;
+    return tempCanvas;
 }
 
 function drawMap(ctx) {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-    const overlayCanvas = generateProvinceOverlay();
+    let cache_map;
+    if (display_map == 'owner') {
+        cache_nation_map = generateProvinceOverlay(cache_nation_map);
+        cache_map = cache_nation_map;
+    } else {
+        cache_ethnic_map = generateProvinceOverlay(cache_ethnic_map);
+        cache_map = cache_ethnic_map;
+    }
 
-    if (!overlayCanvas) {
+    if (!cache_map) {
         ctx.fillStyle = "#ffffff";
         ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         return;
     }
 
-    ctx.drawImage(overlayCanvas, 0, 0);
+    ctx.drawImage(cache_map, 0, 0);
 }
 
 // optional: call this when province ownership changes
 function resetProvinceOverlayCache() {
-    cachedProvinceOverlay = null;
+    cache_nation_map = null;
 }
 
 function floodFill(ctx, startX, startY, fillColor) {
@@ -170,14 +177,14 @@ function drawTileInfo(ctx, currentScale) {
                     }
                 }
 
-                if (displayProperty == 'owner') {
+                if (display_map == 'owner') {
                     if (provinceInfo[id] && provinceInfo[id].owner) {
                         const owner = provinceInfo[id].owner;
                         if (nationInfo[owner] && nationInfo[owner].color) {
                             color = darkenColor(nationInfo[owner].color, 0.9); // 15% darker
                         }
                     }
-                } else if (displayProperty == 'ethnicity') {
+                } else if (display_map == 'ethnicity') {
                     if (provinceInfo[id] && provinceInfo[id].ethnicity) {
                         const eth = provinceInfo[id].ethnicity;
                         if (ethnicityInfo[eth] && ethnicityInfo[eth].color) {
@@ -196,47 +203,52 @@ function drawTileInfo(ctx, currentScale) {
 }
 
 function drawNationLabels(ctx, currentScale) {
-    if (currentScale > zoomedIn) return;
+    if (currentScale >= zoomedIn) return;
 
     const nationCoords = {};
     const nationCounts = {};
     const nationBounds = {};
 
-    // Collect nation data
+    // Decide which data source to use
+    const isOwnerMode = display_map === 'owner';
+    const infoSource = isOwnerMode ? nationInfo : ethnicityInfo;
+
+    // Collect nation/ethnicity data
     for (const id in provinceInfo) {
         if (!Object.prototype.hasOwnProperty.call(provinceInfo, id)) continue;
-        const owner = provinceInfo[id].owner;
-        if (!owner) continue;
+
+        const key = isOwnerMode ? provinceInfo[id].owner : provinceInfo[id].ethnicity;
+        if (!key) continue;
 
         const province = provinceData[id];
         if (!province || !province.pos) continue;
         const [x, y] = province.pos;
 
-        if (!nationCoords[owner]) {
-            nationCoords[owner] = { xSum: 0, ySum: 0 };
-            nationCounts[owner] = 0;
-            nationBounds[owner] = { minX: x, maxX: x, minY: y, maxY: y };
+        if (!nationCoords[key]) {
+            nationCoords[key] = { xSum: 0, ySum: 0 };
+            nationCounts[key] = 0;
+            nationBounds[key] = { minX: x, maxX: x, minY: y, maxY: y };
         }
 
-        nationCoords[owner].xSum += x;
-        nationCoords[owner].ySum += y;
-        nationCounts[owner]++;
+        nationCoords[key].xSum += x;
+        nationCoords[key].ySum += y;
+        nationCounts[key]++;
 
-        nationBounds[owner].minX = Math.min(nationBounds[owner].minX, x);
-        nationBounds[owner].maxX = Math.max(nationBounds[owner].maxX, x);
-        nationBounds[owner].minY = Math.min(nationBounds[owner].minY, y);
-        nationBounds[owner].maxY = Math.max(nationBounds[owner].maxY, y);
+        nationBounds[key].minX = Math.min(nationBounds[key].minX, x);
+        nationBounds[key].maxX = Math.max(nationBounds[key].maxX, x);
+        nationBounds[key].minY = Math.min(nationBounds[key].minY, y);
+        nationBounds[key].maxY = Math.max(nationBounds[key].maxY, y);
     }
 
     // Prepare array for sorting (smallest first)
-    const nations = Object.keys(nationCoords).map(owner => {
+    const nations = Object.keys(nationCoords).map(key => {
         return {
-            owner,
-            count: nationCounts[owner],
-            avgX: nationCoords[owner].xSum / nationCounts[owner],
-            avgY: nationCoords[owner].ySum / nationCounts[owner],
-            width: nationBounds[owner].maxX - nationBounds[owner].minX,
-            height: nationBounds[owner].maxY - nationBounds[owner].minY
+            key,
+            count: nationCounts[key],
+            avgX: nationCoords[key].xSum / nationCounts[key],
+            avgY: nationCoords[key].ySum / nationCounts[key],
+            width: nationBounds[key].maxX - nationBounds[key].minX,
+            height: nationBounds[key].maxY - nationBounds[key].minY
         };
     }).sort((a, b) => a.count - b.count);
 
@@ -249,11 +261,19 @@ function drawNationLabels(ctx, currentScale) {
 
     // Place labels, smallest first
     for (const nation of nations) {
-        let displayName = nation.owner;
-        if (nationInfo[nation.owner]) {
-            displayName = nation.count > 50 && nationInfo[nation.owner].empire_name
-                ? nationInfo[nation.owner].empire_name
-                : nationInfo[nation.owner].name || nation.owner;
+        let displayName = nation.key;
+        const data = infoSource[nation.key];
+
+        if (data) {
+            if (isOwnerMode) {
+                // Owners: use empire_name if large enough
+                displayName = nation.count > 50 && data.empire_name
+                    ? data.empire_name
+                    : data.name || nation.key;
+            } else {
+                // Ethnicities: always use name
+                displayName = data.name || nation.key;
+            }
         }
 
         let fontSize = 16;

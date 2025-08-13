@@ -16,7 +16,7 @@ function clickProvince(ctx, evt) {
     // 4. Flood-fill from the clicked position with red
     floodFill(detectionCtx, clickX, clickY, [255, 0, 0, 255]); // RGBA red
 
-    //cachedProvinceOverlay = detectionCanvas;
+    //cache_nation_map = detectionCanvas;
     
     // 5. Check each province's position to see if it's red
     let clickedProvinceId = null;
@@ -35,18 +35,41 @@ function clickProvince(ctx, evt) {
     
     // 6. Handle the clicked province
     if (clickedProvinceId) {
-        changeOwner(clickedProvinceId, "rome");
+        if (isTileAdjacent(clickedProvinceId, "rome")) {
+            changeOwner(clickedProvinceId, "rome");
+        }
         //console.log(clickedProvinceId);
     } else {
         //console.log("No province clicked at", clickX, clickY);
     }
 }
 
+function isTileAdjacent(id, nation) {
+    let neighbors = provinceData[id].neighbors;
+
+    for (let i = 0; i < neighbors.length; i ++) {
+        if (provinceInfo[neighbors[i]].owner == nation) return true;
+    }
+    return false;
+}
+
 function changeOwner(id, nation) {
-    provinceInfo[id].owner = nation;
     let position = provinceData[id].pos;
-    let nation_ctx = cachedProvinceOverlay.getContext('2d');
-    let rgb = hexToRgb(nationInfo[nation].color);
+    let nation_ctx, rgb;
+
+    if (display_map == 'owner') {
+        if (!nationInfo[nation]) return;
+        provinceInfo[id].owner = nation;
+        rgb = hexToRgb(nationInfo[nation].color);
+        nation_ctx = cache_nation_map.getContext('2d');
+    }
+    else if (display_map == 'ethnicity') {
+        if (!ethnicityInfo[nation]) return;
+        provinceInfo[id].ethnicity = nation;
+        rgb = hexToRgb(ethnicityInfo[nation].color);
+        nation_ctx = cache_ethnic_map.getContext('2d');
+    }
+
     floodFill(nation_ctx, position[0], position[1], [rgb.r, rgb.g, rgb.b]);
     redraw();
 }
