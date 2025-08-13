@@ -1,6 +1,6 @@
 var canvas = document.getElementsByTagName('canvas')[0];
 canvas.width = 800;
-canvas.height = 600;
+canvas.height = 500;
 
 var map_empty = new Image();
 map_empty.src = 'maps/map_empty.png';
@@ -37,7 +37,7 @@ window.onload = function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.restore();
 
-        // special additions to map
+        // post-special additions to map
         ctx.drawImage(map_empty, 0, 0);
         ctx.filter = 'blur(5px)';
         ctx.drawImage(offscreenCanvas, 0, 0);
