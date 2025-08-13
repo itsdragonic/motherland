@@ -43,6 +43,9 @@ window.onload = function () {
         ctx.drawImage(offscreenCanvas, 0, 0);
         ctx.filter = 'none';
         ctx.drawImage(offscreenCanvas, 0, 0);
+
+        drawTileInfo(ctx, currentScale);
+        drawNationLabels(ctx, currentScale);
     }
     redraw();
 
