@@ -10,3 +10,30 @@ canvas {
     background: #fff;
     border: 1px solid #ccc
 }
+
+/* Tech Tree */
+rect {
+    fill: #CCC;
+    cursor: pointer;
+}
+.active {
+    fill: orange;
+    stroke: orange;
+}
+
+.activelink {
+    fill: none;
+    stroke: orange;
+    stroke-width: 2.5px;
+}
+
+.label {
+    fill: white;
+    font-family: sans-serif;
+    pointer-events: none;
+}
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2.5px;
+}
