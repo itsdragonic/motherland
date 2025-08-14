@@ -13,165 +13,165 @@
         "Nodes": [
             {
                 "lvl": 1,
-                "name": "Product 1"
+                "name": "Tech 1"
             },
             {
                 "lvl": 1,
-                "name": "Product 2"
+                "name": "Tech 2"
             },
             {
                 "lvl": 1,
-                "name": "Product 3"
+                "name": "Tech 3"
             },
             {
                 "lvl": 1,
-                "name": "Product 4"
+                "name": "Tech 4"
             },
             {
                 "lvl": 1,
-                "name": "Product 5"
+                "name": "Tech 5"
             },
             {
                 "lvl": 0,
-                "name": "Industry 1"
+                "name": "Choice 1"
             },
             {
                 "lvl": 0,
-                "name": "Industry 2"
+                "name": "Choice 2"
             },
             {
                 "lvl": 0,
-                "name": "Industry 3"
+                "name": "Choice 3"
             },
             {
                 "lvl": 0,
-                "name": "Industry 4"
+                "name": "Choice 4"
             },
             {
                 "lvl": 0,
-                "name": "Industry 5"
+                "name": "Choice 5"
             },
             {
                 "lvl": 2,
-                "name": "Size 1"
+                "name": "Event 1"
             },
             {
                 "lvl": 2,
-                "name": "Size 2"
+                "name": "Event 2"
             },
             {
                 "lvl": 2,
-                "name": "Size 3"
+                "name": "Event 3"
             },
             {
                 "lvl": 2,
-                "name": "Size 4"
+                "name": "Event 4"
             },
             {
                 "lvl": 2,
-                "name": "Size 5"
+                "name": "Event 5"
             }
         ],
         "links": [
             {
-                "source": "Industry 1",
-                "target": "Product 1"
+                "source": "Choice 1",
+                "target": "Tech 1"
             },
             {
-                "source": "Industry 3",
-                "target": "Product 1"
+                "source": "Choice 3",
+                "target": "Tech 1"
             },
             {
-                "source": "Industry 5",
-                "target": "Product 1"
+                "source": "Choice 5",
+                "target": "Tech 1"
             },
             {
-                "source": "Industry 2",
-                "target": "Product 2"
+                "source": "Choice 2",
+                "target": "Tech 2"
             },
             {
-                "source": "Industry 4",
-                "target": "Product 2"
+                "source": "Choice 4",
+                "target": "Tech 2"
             },
             {
-                "source": "Industry 1",
-                "target": "Product 3"
+                "source": "Choice 1",
+                "target": "Tech 3"
             },
             {
-                "source": "Industry 3",
-                "target": "Product 3"
+                "source": "Choice 3",
+                "target": "Tech 3"
             },
             {
-                "source": "Industry 5",
-                "target": "Product 3"
+                "source": "Choice 5",
+                "target": "Tech 3"
             },
             {
-                "source": "Industry 2",
-                "target": "Product 4"
+                "source": "Choice 2",
+                "target": "Tech 4"
             },
             {
-                "source": "Industry 4",
-                "target": "Product 4"
+                "source": "Choice 4",
+                "target": "Tech 4"
             },
             {
-                "source": "Industry 1",
-                "target": "Product 5"
+                "source": "Choice 1",
+                "target": "Tech 5"
             },
             {
-                "source": "Industry 3",
-                "target": "Product 5"
+                "source": "Choice 3",
+                "target": "Tech 5"
             },
             {
-                "source": "Industry 5",
-                "target": "Product 5"
+                "source": "Choice 5",
+                "target": "Tech 5"
             },
             {
-                "source": "Product 1",
-                "target": "Size 2"
+                "source": "Tech 1",
+                "target": "Event 2"
             },
             {
-                "source": "Product 1",
-                "target": "Size 4"
+                "source": "Tech 1",
+                "target": "Event 4"
             },
             {
-                "source": "Product 2",
-                "target": "Size 1"
+                "source": "Tech 2",
+                "target": "Event 1"
             },
             {
-                "source": "Product 2",
-                "target": "Size 3"
+                "source": "Tech 2",
+                "target": "Event 3"
             },
             {
-                "source": "Size 5",
-                "target": "Product 2"
+                "source": "Event 5",
+                "target": "Tech 2"
             },
             {
-                "source": "Product 3",
-                "target": "Size 2"
+                "source": "Tech 3",
+                "target": "Event 2"
             },
             {
-                "source": "Product 3",
-                "target": "Size 4"
+                "source": "Tech 3",
+                "target": "Event 4"
             },
             {
-                "source": "Product 4",
-                "target": "Size 1"
+                "source": "Tech 4",
+                "target": "Event 1"
             },
             {
-                "source": "Product 4",
-                "target": "Size 3"
+                "source": "Tech 4",
+                "target": "Event 3"
             },
             {
-                "source": "Product 4",
-                "target": "Size 5"
+                "source": "Tech 4",
+                "target": "Event 5"
             },
             {
-                "source": "Product 5",
-                "target": "Size 2"
+                "source": "Tech 5",
+                "target": "Event 2"
             },
             {
-                "source": "Product 5",
-                "target": "Size 4"
+                "source": "Tech 5",
+                "target": "Event 4"
             }
         ]
     };
@@ -301,6 +301,8 @@
             .attr('class', 'node')
             .attr('rx', 6)
             .attr('ry', 6)
+            .style('stroke', 'white')        // Outline color
+            .style('stroke-width', 2)
             .on('mouseover', function () {
                 mouse_action(d3.select(this).datum(), true, 'root');
                 unvisite_links();
@@ -356,5 +358,5 @@
     } else {
         boot();
     }
-    
+
 })();

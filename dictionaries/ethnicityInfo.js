@@ -32,4 +32,23 @@ const ethnicityInfo = {
         "name": "Greeks",
         "color": "#e2007e",
     },
+    "sarmatians": {
+        "name": "Sarmatians",
+        "color": "#ffb45e",
+    },
+    "britons": {
+        "name": "Gauls",
+        "color": "#00eacf",
+        "group": "celts",
+    },
+    "scots": {
+        "name": "Gauls",
+        "color": "#00b7ea",
+        "group": "celts",
+    },
+    "irish": {
+        "name": "Hiberni",
+        "color": "#00ea94",
+        "group": "celts",
+    },
 }

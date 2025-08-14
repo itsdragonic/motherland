@@ -32,18 +32,35 @@
 
 <body>
 
+    <!-- Top Bar -->
+    <div id="top_bar">
+        <div id="top_left">
+            <span id="gold_display">Gold: 0</span>
+            <span id="player">Rome</span>
+            <label for="map_select" id="map_label">Select Map</label>
+            <select id="map_select">
+                <option value="owner">Political Map</option>
+                <option value="ethnicity">Ethnic Map</option>
+            </select>
+        </div>
+        <div id="top_right">
+            Year: 1 AD
+        </div>
+    </div>
+
+
+    <!-- Left Info -->
+    <div id="left_info"></div>
+
+    <!-- Right Info -->
+    <div id="right_info"></div>
+
     <!-- The Map -->
     <canvas></canvas>
 
-    <!-- Map Selection -->
-    <label for="map_select" id="map_label">Select Map</label>
-    <select id="map_select">
-        <option value="owner">Political Map</option>
-        <option value="ethnicity">Ethnic Map</option>
-    </select>
-
     <!-- Tech Trees -->
     <div id="tree"></div>
+
 
     <!-- The Scripts -->
     <script src="https://d3js.org/d3.v3.min.js" defer></script>
