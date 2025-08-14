@@ -30,4 +30,8 @@ let cityInfo = {
         name: "Ctesiphon",
         population: 25,
     },
+    "596": {
+        name: "Byzantium",
+        population: 10
+    }
 }

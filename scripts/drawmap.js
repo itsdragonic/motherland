@@ -151,10 +151,16 @@ function darkenColor(hex, factor = 0.8) {
     return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
 }
 
+// adjustable scale factor for city/army display
+const tileInfoScale = 0.35;
+
 function drawTileInfo(ctx, currentScale) {
     if (currentScale >= zoomedIn) {
         const screenTopLeft = ctx.transformedPoint(0, 0);
         const screenBottomRight = ctx.transformedPoint(canvas.width, canvas.height);
+
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
 
         for (const id in provinceData) {
             if (!Object.prototype.hasOwnProperty.call(provinceData, id)) continue;
@@ -168,38 +174,90 @@ function drawTileInfo(ctx, currentScale) {
                 x >= screenTopLeft.x && x <= screenBottomRight.x &&
                 y >= screenTopLeft.y && y <= screenBottomRight.y
             ) {
-                // Determine owner color or default to light gray
-                let color = '#efefefff'; // default light gray
+                let yOffset = 0;
 
-                if (provinceData[id] && provinceData[id].type) {
-                    if (provinceData[id].type == 'ocean') {
-                        color = '#6dc6e3';
+                // ===== Draw City if exists =====
+                if (cityInfo[id]) {
+                    const owner = provinceInfo[id]?.owner;
+                    let bgColor = "#ccc";
+                    if (owner && nationInfo[owner]?.color) {
+                        bgColor = darkenColor(nationInfo[owner].color, 0.9);
                     }
+
+                    const text = `🏙️${cityInfo[id].name}`;
+                    ctx.font = `${8 * tileInfoScale}px Lato, sans-serif`;
+                    const textWidth = ctx.measureText(text).width;
+                    const padding = 2 * tileInfoScale;
+
+                    // background box
+                    ctx.fillStyle = bgColor;
+                    roundRect(ctx, x - textWidth / 2 - padding, y + yOffset - 6 * tileInfoScale, textWidth + padding * 2, 10 * tileInfoScale, 2 * tileInfoScale, true, false);
+
+                    // outline
+                    ctx.lineWidth = 0.5 * tileInfoScale;
+                    ctx.strokeStyle = "white";
+                    roundRect(ctx, x - textWidth / 2 - padding, y + yOffset - 6 * tileInfoScale, textWidth + padding * 2, 10 * tileInfoScale, 2 * tileInfoScale, false, true);
+
+                    // text
+                    ctx.fillStyle = "black";
+                    ctx.fillText(text, x, y + yOffset);
+
+                    yOffset += 12 * tileInfoScale;
                 }
 
-                if (display_map == 'owner') {
-                    if (provinceInfo[id] && provinceInfo[id].owner) {
-                        const owner = provinceInfo[id].owner;
-                        if (nationInfo[owner] && nationInfo[owner].color) {
-                            color = darkenColor(nationInfo[owner].color, 0.9); // 15% darker
+                // ===== Draw Armies if exists =====
+                if (provinceInfo[id]?.armies) {
+                    for (const nation in provinceInfo[id].armies) {
+                        const count = provinceInfo[id].armies[nation];
+                        let bgColor = "#ccc";
+                        if (nationInfo[nation]?.color) {
+                            bgColor = darkenColor(nationInfo[nation].color, 0.9);
                         }
-                    }
-                } else if (display_map == 'ethnicity') {
-                    if (provinceInfo[id] && provinceInfo[id].ethnicity) {
-                        const eth = provinceInfo[id].ethnicity;
-                        if (ethnicityInfo[eth] && ethnicityInfo[eth].color) {
-                            color = darkenColor(ethnicityInfo[eth].color, 0.9);
-                        }
+
+                        const text = `🪖${count}`;
+                        ctx.font = `${8 * tileInfoScale}px Lato, sans-serif`;
+                        const textWidth = ctx.measureText(text).width;
+                        const padding = 2 * tileInfoScale;
+
+                        // background box
+                        ctx.fillStyle = bgColor;
+                        roundRect(ctx, x - textWidth / 2 - padding, y + yOffset - 6 * tileInfoScale, textWidth + padding * 2, 10 * tileInfoScale, 2 * tileInfoScale, true, false);
+
+                        // outline
+                        ctx.lineWidth = 0.5 * tileInfoScale;
+                        ctx.strokeStyle = "white";
+                        roundRect(ctx, x - textWidth / 2 - padding, y + yOffset - 6 * tileInfoScale, textWidth + padding * 2, 10 * tileInfoScale, 2 * tileInfoScale, false, true);
+
+                        // text
+                        ctx.fillStyle = "black";
+                        ctx.fillText(text, x, y + yOffset);
+
+                        yOffset += 12 * tileInfoScale;
                     }
                 }
-                
-                ctx.fillStyle = color;
-                ctx.beginPath();
-                ctx.arc(x, y, 2, 0, Math.PI * 2);
-                ctx.fill();
             }
         }
     }
+}
+
+// helper for rounded rectangles
+function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
+    if (typeof radius === 'number') {
+        radius = { tl: radius, tr: radius, br: radius, bl: radius };
+    }
+    ctx.beginPath();
+    ctx.moveTo(x + radius.tl, y);
+    ctx.lineTo(x + width - radius.tr, y);
+    ctx.quadraticCurveTo(x + width, y, x + width, y + radius.tr);
+    ctx.lineTo(x + width, y + height - radius.br);
+    ctx.quadraticCurveTo(x + width, y + height, x + width - radius.br, y + height);
+    ctx.lineTo(x + radius.bl, y + height);
+    ctx.quadraticCurveTo(x, y + height, x, y + height - radius.bl);
+    ctx.lineTo(x, y + radius.tl);
+    ctx.quadraticCurveTo(x, y, x + radius.tl, y);
+    ctx.closePath();
+    if (fill) ctx.fill();
+    if (stroke) ctx.stroke();
 }
 
 function drawNationLabels(ctx, currentScale) {
