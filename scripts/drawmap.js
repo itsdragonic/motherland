@@ -53,12 +53,6 @@ function generateProvinceOverlay(cache = null) {
         floodFill(tempCtx, startX, startY, [rgb.r, rgb.g, rgb.b, 255]);
     }
 
-
-    // final touches
-    //tempCtx.filter = 'blur(3px)';
-    tempCtx.drawImage(tempCanvas, 0, 0);
-    //tempCtx.filter = 'none';
-
     return tempCanvas;
 }
 

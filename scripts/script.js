@@ -8,7 +8,11 @@ map_empty.src = 'maps/map_empty.png';
 var map_provinces = new Image();
 map_provinces.src = 'maps/map_provinces.png';
 
+var map_physical = new Image();
+map_physical.src = 'maps/map_physical.png';
+
 var disable_tiles = false;
+var physical_map = false;
 
 // Play button
 var title_screen = true;
@@ -20,8 +24,16 @@ document.getElementById('play_button').addEventListener('click', function() {
 });
 
 // Settings
-document.getElementById('smooth_map_checkbox').addEventListener('change', function(e) {
+document.getElementById('disable_tile_checkbox').addEventListener('change', function(e) {
     disable_tiles = !disable_tiles;
+    redraw();
+});
+document.getElementById('physical_map_checkbox').addEventListener('change', function(e) {
+    physical_map = !physical_map;
+    if (physical_map) {
+        document.getElementById('disable_tile_checkbox').checked = true;
+        disable_tiles = true;
+    }
     redraw();
 });
 
@@ -84,15 +96,42 @@ window.onload = function () {
             // raw map
             drawMap(offscreenCtx);
 
+            // Make white pixels transparent if physical_map is true
+            if (physical_map) {
+                let imgData = offscreenCtx.getImageData(0, 0, offscreenCanvas.width, offscreenCanvas.height);
+                let data = imgData.data;
+                for (let i = 0; i < data.length; i += 4) {
+                    // white to transparent
+                    if (data[i] === 255 && data[i+1] === 255 && data[i+2] === 255 && data[i+3] === 255) {
+                        data[i+3] = 0;
+                    }
+                    // transparent to blue
+                    else if (data[i+3] === 0 && !disable_tiles) {
+                        data[i] = 23;
+                        data[i+1] = 45;
+                        data[i+2] = 53;
+                        data[i+3] = 150;
+                    }
+                }
+                offscreenCtx.putImageData(imgData, 0, 0);
+            }
+            // ------------------------------------------------------------
+
             ctx.save();
             ctx.setTransform(1, 0, 0, 1, 0, 0);
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.restore();
 
             // post-special additions to map
+            ctx.save();
+
+            if (physical_map) {
+                ctx.drawImage(map_physical, 0, 0);
+                ctx.globalAlpha = 0.5;
+            }
             if (disable_tiles) {
                 ctx.imageSmoothingEnabled = true;
-                ctx.drawImage(map_empty, 0, 0);
+                if (!physical_map) ctx.drawImage(map_empty, 0, 0);
                 ctx.drawImage(offscreenCanvas, 1, 0);
                 ctx.drawImage(offscreenCanvas, -1, 0);
                 ctx.drawImage(offscreenCanvas, 0, 1);
@@ -102,12 +141,13 @@ window.onload = function () {
                 ctx.filter = 'none';
             } else {
                 // default
-                ctx.drawImage(map_empty, 0, 0);
+                if (!physical_map) ctx.drawImage(map_empty, 0, 0);
                 ctx.filter = 'blur(5px)';
                 ctx.drawImage(offscreenCanvas, 0, 0);
                 ctx.filter = 'none';
                 ctx.drawImage(offscreenCanvas, 0, 0);
             }
+            ctx.restore();
 
             drawTileInfo(ctx, currentScale);
             drawNationLabels(ctx, currentScale);
