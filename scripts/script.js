@@ -8,12 +8,20 @@ map_empty.src = 'maps/map_empty.png';
 var map_provinces = new Image();
 map_provinces.src = 'maps/map_provinces.png';
 
+var disable_tiles = false;
+
 // Play button
 var title_screen = true;
 document.getElementById('play_button').addEventListener('click', function() {
     document.getElementById('play_button').style.display = 'none';
     title_screen = false;
     initializeGame();
+    redraw();
+});
+
+// Settings
+document.getElementById('smooth_map_checkbox').addEventListener('change', function(e) {
+    disable_tiles = !disable_tiles;
     redraw();
 });
 
@@ -82,11 +90,24 @@ window.onload = function () {
             ctx.restore();
 
             // post-special additions to map
-            ctx.drawImage(map_empty, 0, 0);
-            ctx.filter = 'blur(5px)';
-            ctx.drawImage(offscreenCanvas, 0, 0);
-            ctx.filter = 'none';
-            ctx.drawImage(offscreenCanvas, 0, 0);
+            if (disable_tiles) {
+                ctx.imageSmoothingEnabled = true;
+                ctx.drawImage(map_empty, 0, 0);
+                ctx.drawImage(offscreenCanvas, 1, 0);
+                ctx.drawImage(offscreenCanvas, -1, 0);
+                ctx.drawImage(offscreenCanvas, 0, 1);
+                ctx.drawImage(offscreenCanvas, 0, -1);
+                ctx.filter = 'blur(3px)';
+                ctx.drawImage(offscreenCanvas, 0, 0);
+                ctx.filter = 'none';
+            } else {
+                // default
+                ctx.drawImage(map_empty, 0, 0);
+                ctx.filter = 'blur(5px)';
+                ctx.drawImage(offscreenCanvas, 0, 0);
+                ctx.filter = 'none';
+                ctx.drawImage(offscreenCanvas, 0, 0);
+            }
 
             drawTileInfo(ctx, currentScale);
             drawNationLabels(ctx, currentScale);

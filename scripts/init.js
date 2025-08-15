@@ -47,16 +47,7 @@ function month(number) {
     }
 }
 
-function initializeGame() {
-    game_data.turn = 1;
-    game_data.month = 1;
-    game_data.year = 1;
-
-    runTurn();
-}
-
-function runTurn() {
-    // Display turn
+function updateInfo() {
     let year = game_data.year;
     if (year < 0) {
         year = game_data.year + ' BC';
@@ -67,6 +58,22 @@ function runTurn() {
 
     display.gold.innerText = `Gold: ${player.gold}`;
     display.player.innerText = nationInfo[player.nation].name;
+}
+
+function initializeGame() {
+    game_data.turn = 1;
+    game_data.month = 1;
+    game_data.year = 1;
+
+    runTurn();
+}
+
+function runTurn() {
+    updateInfo();
+
+    // Running the turn
+
+    player.gold += 50 // temporary
 }
 
 function nextTurn() {

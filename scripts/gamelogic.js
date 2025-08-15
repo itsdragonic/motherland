@@ -34,7 +34,7 @@ function clickProvince(ctx, evt) {
     }
     
     // 6. Handle the clicked province
-    if (clickedProvinceId) {
+    if (clickedProvinceId && player.gold > 0) {
         if (display_map == 'owner') {
             if (isTileAdjacent(clickedProvinceId, player.nation)) {
                 changeOwner(clickedProvinceId, player.nation);
@@ -45,6 +45,8 @@ function clickProvince(ctx, evt) {
             }
         }
         
+        player.gold -= 100;
+        updateInfo();
         //console.log(clickedProvinceId);
     } else {
         //console.log("No province clicked at", clickX, clickY);

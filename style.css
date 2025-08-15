@@ -24,6 +24,59 @@ canvas {
     box-shadow: 0 0 0 3px #2a64a2; /* inner color keeps edge look */
     border-radius: 10px;
     overflow-y: auto;
+    padding: 10px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* New styles for settings */
+#right_info h2 {
+    margin: 0 0 10px 0;
+    color: #ebcc3b;
+    text-align: center;
+}
+
+.settings-divider {
+    border: 0;
+    height: 1px;
+    background: #ebcc3b;
+    margin-bottom: 15px;
+}
+
+.setting-option {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.setting-option input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ebcc3b;
+    border-radius: 3px;
+    margin-right: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+.setting-option input[type="checkbox"]:checked {
+    background-color: #ebcc3b;
+}
+
+.setting-option input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    color: #2a64a2;
+    font-size: 14px;
+    left: 2px;
+    top: -1px;
+}
+
+.setting-option label {
+    cursor: pointer;
+    user-select: none;
 }
 
 #left_info {
