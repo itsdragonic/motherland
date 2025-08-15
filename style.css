@@ -8,7 +8,7 @@ body {
 /* Canvas */
 canvas {
     display: block;
-    margin: 0 auto;
+    margin: 46px auto 0 auto;
     background: #fff;
     border: 1px solid #ccc;
 }
@@ -76,6 +76,10 @@ canvas {
 }
 
 /* Tech Tree SVG styles */
+#tree {
+    display: none;
+}
+
 rect {
     fill: #d8b156;
     cursor: pointer;
@@ -98,4 +102,26 @@ rect {
     fill: none;
     stroke: #fcc41a;
     stroke-width: 2.5px;
+}
+
+/* Play Button */
+#play_button {
+    display: block;
+    margin: 30px auto 0 auto;
+    padding: 16px 48px;
+    font-size: 2rem;
+    background: #ebcc3b;
+    color: #2a64a2;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+#play_button:hover {
+    background: #ffe066;
+    color: #1a3a5a;
+    transform: scale(1.04);
 }

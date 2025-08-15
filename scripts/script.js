@@ -8,6 +8,13 @@ map_empty.src = 'maps/map_empty.png';
 var map_provinces = new Image();
 map_provinces.src = 'maps/map_provinces.png';
 
+var title_screen = true;
+document.getElementById('play_button').addEventListener('click', function() {
+    document.getElementById('play_button').style.display = 'none';
+    title_screen = false;
+    redraw();
+});
+
 window.onload = function () {
 
     var ctx = canvas.getContext('2d');
@@ -20,32 +27,68 @@ window.onload = function () {
     var offscreenCtx = offscreenCanvas.getContext('2d');
 
     window.redraw = function() {
-        const currentScale = ctx.getTransform().a; // current zoom
-
-        // Turn smoothing on/off depending on zoom
-        if (currentScale < 1) {
-            ctx.imageSmoothingEnabled = true;
-        } else {
+        if (title_screen) {
+            // Drawing background of title screen
             ctx.imageSmoothingEnabled = false;
+            ctx.drawImage(map_empty, 0, -250);
+            ctx.filter = 'blur(5px)';
+            ctx.drawImage(map_provinces, 0, -250);
+            ctx.filter = 'none';
+            ctx.drawImage(map_provinces, 0, -250);
+            
+            // Text
+            let centerX = canvas.width/2;
+            let centerY = canvas.height/2;
+
+            ctx.save();
+            ctx.shadowColor = "rgba(0, 0, 0, 0.27)";
+            ctx.shadowBlur = 50;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+
+            ctx.beginPath();
+            ctx.ellipse(centerX, centerY, 200, 50, 0, 0, 2 * Math.PI);
+            ctx.fillStyle = 'rgba(100, 100, 100, 0.5)';
+            ctx.fill();
+
+            ctx.font = 'bold 60px serif, Lato, Arial';
+            ctx.fillStyle = 'black';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = 5;
+
+            ctx.fillText('Motherland', centerX, centerY);
+            ctx.restore();
+
+        } else {
+            const currentScale = ctx.getTransform().a; // current zoom
+
+            // Turn smoothing on/off depending on zoom
+            if (currentScale < 1) {
+                ctx.imageSmoothingEnabled = true;
+            } else {
+                ctx.imageSmoothingEnabled = false;
+            }
+
+            // raw map
+            drawMap(offscreenCtx);
+
+            ctx.save();
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.restore();
+
+            // post-special additions to map
+            ctx.drawImage(map_empty, 0, 0);
+            ctx.filter = 'blur(5px)';
+            ctx.drawImage(offscreenCanvas, 0, 0);
+            ctx.filter = 'none';
+            ctx.drawImage(offscreenCanvas, 0, 0);
+
+            drawTileInfo(ctx, currentScale);
+            drawNationLabels(ctx, currentScale);
         }
-
-        // raw map
-        drawMap(offscreenCtx);
-
-        ctx.save();
-        ctx.setTransform(1, 0, 0, 1, 0, 0);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.restore();
-
-        // post-special additions to map
-        ctx.drawImage(map_empty, 0, 0);
-        ctx.filter = 'blur(5px)';
-        ctx.drawImage(offscreenCanvas, 0, 0);
-        ctx.filter = 'none';
-        ctx.drawImage(offscreenCanvas, 0, 0);
-
-        drawTileInfo(ctx, currentScale);
-        drawNationLabels(ctx, currentScale);
     }
     redraw();
 
