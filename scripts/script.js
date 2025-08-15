@@ -8,10 +8,12 @@ map_empty.src = 'maps/map_empty.png';
 var map_provinces = new Image();
 map_provinces.src = 'maps/map_provinces.png';
 
+// Play button
 var title_screen = true;
 document.getElementById('play_button').addEventListener('click', function() {
     document.getElementById('play_button').style.display = 'none';
     title_screen = false;
+    initializeGame();
     redraw();
 });
 
@@ -37,8 +39,8 @@ window.onload = function () {
             ctx.drawImage(map_provinces, 0, -250);
             
             // Text
-            let centerX = canvas.width/2;
-            let centerY = canvas.height/2;
+            let centerX = canvas.width / 2;
+            let centerY = canvas.height / 2;
 
             ctx.save();
             ctx.shadowColor = "rgba(0, 0, 0, 0.27)";

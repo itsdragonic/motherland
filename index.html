@@ -35,16 +35,15 @@
     <!-- Top Bar -->
     <div id="top_bar">
         <div id="top_left">
-            <span id="gold_display">Gold: 0</span>
-            <span id="player">Rome</span>
-            <label for="map_select" id="map_label">Select Map</label>
+            <span id="gold_display">Gold: --</span>
+            <span id="player_display">------</span>
             <select id="map_select">
                 <option value="owner">Political Map</option>
                 <option value="ethnicity">Ethnic Map</option>
             </select>
         </div>
         <div id="top_right">
-            Year: 1 AD
+            <span id="year_display">Jan 1 AD</span>
         </div>
     </div>
 
@@ -72,6 +71,7 @@
     <script src="dictionaries/nationInfo.js"></script>
     <script src="dictionaries/ethnicityInfo.js"></script>
     <script src="dictionaries/cityInfo.js"></script>
+    <script src="scripts/init.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/gamelogic.js"></script>
     <script src="scripts/drawmap.js"></script>

@@ -1,8 +1,3 @@
-let player = {
-    nation: "rome",
-    ethnicity: "romans",
-}
-
 function clickProvince(ctx, evt) {
     // 1. Get clicked position in canvas coordinates
     const pt = ctx.transformedPoint(evt.offsetX, evt.offsetY);
