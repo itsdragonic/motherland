@@ -64,6 +64,7 @@ function initializeGame() {
     game_data.turn = 1;
     game_data.month = 1;
     game_data.year = 1;
+    loadScenario();
 
     runTurn();
 }

@@ -3,7 +3,7 @@ let cache_ethnic_map = null;
 let zoomedIn = 3.5;
 let display_map = 'owner';
 
-function generateProvinceOverlay(cache = null) {
+function drawProvinces(cache = null) {
     // return cached result if available
     if (cache) return cache;
 
@@ -61,10 +61,10 @@ function drawMap(ctx) {
 
     let cache_map;
     if (display_map == 'owner') {
-        cache_nation_map = generateProvinceOverlay(cache_nation_map);
+        cache_nation_map = drawProvinces(cache_nation_map);
         cache_map = cache_nation_map;
     } else {
-        cache_ethnic_map = generateProvinceOverlay(cache_ethnic_map);
+        cache_ethnic_map = drawProvinces(cache_ethnic_map);
         cache_map = cache_ethnic_map;
     }
 
@@ -75,74 +75,6 @@ function drawMap(ctx) {
     }
 
     ctx.drawImage(cache_map, 0, 0);
-}
-
-// optional: call this when province ownership changes
-function resetProvinceOverlayCache() {
-    cache_nation_map = null;
-}
-
-function floodFill(ctx, startX, startY, fillColor) {
-    const imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-    const data = imageData.data;
-    const width = imageData.width;
-    const height = imageData.height;
-
-    const startPos = (startY * width + startX) * 4;
-    const startR = data[startPos];
-    const startG = data[startPos + 1];
-    const startB = data[startPos + 2];
-    const startA = data[startPos + 3];
-
-    const fillR = fillColor[0];
-    const fillG = fillColor[1];
-    const fillB = fillColor[2];
-    const fillA = fillColor[3] || 255;
-
-    if (startR === fillR && startG === fillG && startB === fillB && startA === fillA) {
-        return;
-    }
-
-    const stack = [[startX, startY]];
-
-    while (stack.length > 0) {
-        const [x, y] = stack.pop();
-
-        if (x < 0 || x >= width || y < 0 || y >= height) continue;
-
-        const pos = (y * width + x) * 4;
-
-        if (data[pos] === startR && data[pos + 1] === startG &&
-            data[pos + 2] === startB && data[pos + 3] === startA) {
-
-            data[pos] = fillR;
-            data[pos + 1] = fillG;
-            data[pos + 2] = fillB;
-            data[pos + 3] = fillA;
-
-            stack.push([x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]);
-        }
-    }
-
-    ctx.putImageData(imageData, 0, 0);
-}
-
-function darkenColor(hex, factor = 0.8) {
-    // Remove '#' if present
-    hex = hex.replace(/^#/, '');
-
-    // Parse r, g, b from hex
-    let r = parseInt(hex.substring(0, 2), 16);
-    let g = parseInt(hex.substring(2, 4), 16);
-    let b = parseInt(hex.substring(4, 6), 16);
-
-    // Apply darkening factor
-    r = Math.max(0, Math.min(255, Math.floor(r * factor)));
-    g = Math.max(0, Math.min(255, Math.floor(g * factor)));
-    b = Math.max(0, Math.min(255, Math.floor(b * factor)));
-
-    // Convert back to hex string
-    return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
 }
 
 // adjustable scale factor for city/army display
@@ -234,26 +166,6 @@ function drawTileInfo(ctx, currentScale) {
     }
 }
 
-// helper for rounded rectangles
-function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
-    if (typeof radius === 'number') {
-        radius = { tl: radius, tr: radius, br: radius, bl: radius };
-    }
-    ctx.beginPath();
-    ctx.moveTo(x + radius.tl, y);
-    ctx.lineTo(x + width - radius.tr, y);
-    ctx.quadraticCurveTo(x + width, y, x + width, y + radius.tr);
-    ctx.lineTo(x + width, y + height - radius.br);
-    ctx.quadraticCurveTo(x + width, y + height, x + width - radius.br, y + height);
-    ctx.lineTo(x + radius.bl, y + height);
-    ctx.quadraticCurveTo(x, y + height, x, y + height - radius.bl);
-    ctx.lineTo(x, y + radius.tl);
-    ctx.quadraticCurveTo(x, y, x + radius.tl, y);
-    ctx.closePath();
-    if (fill) ctx.fill();
-    if (stroke) ctx.stroke();
-}
-
 function drawNationLabels(ctx, currentScale) {
     if (currentScale >= zoomedIn) return;
 
@@ -261,48 +173,46 @@ function drawNationLabels(ctx, currentScale) {
     const nationCounts = {};
     const nationBounds = {};
 
-    // Decide which data source to use
     const isOwnerMode = display_map === 'owner';
     const infoSource = isOwnerMode ? nationInfo : ethnicityInfo;
+    const sourceGroup = isOwnerMode ? scenario.nations : scenario.ethnicities;
 
-    // Collect nation/ethnicity data
-    for (const id in provinceInfo) {
-        if (!Object.prototype.hasOwnProperty.call(provinceInfo, id)) continue;
+    // Use prebuilt scenario data for both owner and ethnicity
+    for (const key in sourceGroup) {
+        const provinceIds = sourceGroup[key].provinces;
+        if (!provinceIds.length) continue;
 
-        const key = isOwnerMode ? provinceInfo[id].owner : provinceInfo[id].ethnicity;
-        if (!key) continue;
+        for (const id of provinceIds) {
+            const province = provinceData[id];
+            if (!province || !province.pos) continue;
+            const [x, y] = province.pos;
 
-        const province = provinceData[id];
-        if (!province || !province.pos) continue;
-        const [x, y] = province.pos;
+            if (!nationCoords[key]) {
+                nationCoords[key] = { xSum: 0, ySum: 0 };
+                nationCounts[key] = 0;
+                nationBounds[key] = { minX: x, maxX: x, minY: y, maxY: y };
+            }
 
-        if (!nationCoords[key]) {
-            nationCoords[key] = { xSum: 0, ySum: 0 };
-            nationCounts[key] = 0;
-            nationBounds[key] = { minX: x, maxX: x, minY: y, maxY: y };
+            nationCoords[key].xSum += x;
+            nationCoords[key].ySum += y;
+            nationCounts[key]++;
+
+            nationBounds[key].minX = Math.min(nationBounds[key].minX, x);
+            nationBounds[key].maxX = Math.max(nationBounds[key].maxX, x);
+            nationBounds[key].minY = Math.min(nationBounds[key].minY, y);
+            nationBounds[key].maxY = Math.max(nationBounds[key].maxY, y);
         }
-
-        nationCoords[key].xSum += x;
-        nationCoords[key].ySum += y;
-        nationCounts[key]++;
-
-        nationBounds[key].minX = Math.min(nationBounds[key].minX, x);
-        nationBounds[key].maxX = Math.max(nationBounds[key].maxX, x);
-        nationBounds[key].minY = Math.min(nationBounds[key].minY, y);
-        nationBounds[key].maxY = Math.max(nationBounds[key].maxY, y);
     }
 
-    // Prepare array for sorting (smallest first)
-    const nations = Object.keys(nationCoords).map(key => {
-        return {
-            key,
-            count: nationCounts[key],
-            avgX: nationCoords[key].xSum / nationCounts[key],
-            avgY: nationCoords[key].ySum / nationCounts[key],
-            width: nationBounds[key].maxX - nationBounds[key].minX,
-            height: nationBounds[key].maxY - nationBounds[key].minY
-        };
-    }).sort((a, b) => a.count - b.count);
+    // Build nations array, sort smallest first
+    const nations = Object.keys(nationCoords).map(key => ({
+        key,
+        count: nationCounts[key],
+        avgX: nationCoords[key].xSum / nationCounts[key],
+        avgY: nationCoords[key].ySum / nationCounts[key],
+        width: nationBounds[key].maxX - nationBounds[key].minX,
+        height: nationBounds[key].maxY - nationBounds[key].minY
+    })).sort((a, b) => a.count - b.count);
 
     const placedLabels = [];
 
@@ -311,19 +221,16 @@ function drawNationLabels(ctx, currentScale) {
     ctx.textBaseline = "middle";
     ctx.fillStyle = "black";
 
-    // Place labels, smallest first
     for (const nation of nations) {
         let displayName = nation.key;
         const data = infoSource[nation.key];
 
         if (data) {
             if (isOwnerMode) {
-                // Owners: use empire_name if large enough
                 displayName = nation.count > 50 && data.empire_name
                     ? data.empire_name
                     : data.name || nation.key;
             } else {
-                // Ethnicities: always use name
                 displayName = data.name || nation.key;
             }
         }
@@ -331,7 +238,6 @@ function drawNationLabels(ctx, currentScale) {
         let fontSize = 16;
         ctx.font = `bold ${fontSize}px Lato, Arial`;
 
-        // Fit text to territory width
         while (ctx.measureText(displayName).width < nation.width * 0.9 && fontSize < 200) {
             fontSize++;
             ctx.font = `bold ${fontSize}px Lato, Arial`;
@@ -341,10 +247,10 @@ function drawNationLabels(ctx, currentScale) {
             ctx.font = `bold ${fontSize}px Lato, Arial`;
         }
 
-        // Now check for overlaps with placed smaller labels
         let textWidth = ctx.measureText(displayName).width;
         let textHeight = fontSize;
         let collision = true;
+
         while (collision && fontSize > 5) {
             collision = false;
             for (const placed of placedLabels) {
@@ -355,7 +261,6 @@ function drawNationLabels(ctx, currentScale) {
                     nation.avgY - textHeight / 2 > placed.y + placed.h / 2;
 
                 if (!noOverlap) {
-                    // Overlaps: shrink
                     fontSize--;
                     ctx.font = `bold ${fontSize}px Lato, Arial`;
                     textWidth = ctx.measureText(displayName).width;
@@ -366,7 +271,6 @@ function drawNationLabels(ctx, currentScale) {
             }
         }
 
-        // If font size is too small after shrinking, skip drawing
         if (fontSize >= 6) {
             ctx.fillText(displayName, nation.avgX, nation.avgY);
             placedLabels.push({ x: nation.avgX, y: nation.avgY, w: textWidth, h: textHeight });

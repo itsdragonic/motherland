@@ -64,38 +64,50 @@ function isTileAdjacent(id, nation) {
 }
 
 function changeOwner(id, nation) {
-    let position = provinceData[id].pos;
+    const position = provinceData[id].pos;
     let nation_ctx, rgb;
 
-    if (display_map == 'owner') {
+    if (display_map === 'owner') {
         if (!nationInfo[nation]) return;
+
+        // --- remove from old owner in scenario ---
+        const oldOwner = provinceInfo[id].owner;
+        if (oldOwner && scenario.nations[oldOwner]) {
+            scenario.nations[oldOwner].provinces =
+                scenario.nations[oldOwner].provinces.filter(pid => pid !== id);
+        }
+
+        // --- assign new owner ---
         provinceInfo[id].owner = nation;
+        if (!scenario.nations[nation]) {
+            scenario.nations[nation] = { provinces: [] };
+        }
+        scenario.nations[nation].provinces.push(id);
+
         rgb = hexToRgb(nationInfo[nation].color);
         nation_ctx = cache_nation_map.getContext('2d');
     }
-    else if (display_map == 'ethnicity') {
+    else if (display_map === 'ethnicity') {
         if (!ethnicityInfo[nation]) return;
+
+        // --- remove from old ethnicity in scenario ---
+        const oldEthnicity = provinceInfo[id].ethnicity;
+        if (oldEthnicity && scenario.ethnicities[oldEthnicity]) {
+            scenario.ethnicities[oldEthnicity].provinces =
+                scenario.ethnicities[oldEthnicity].provinces.filter(pid => pid !== id);
+        }
+
+        // --- assign new ethnicity ---
         provinceInfo[id].ethnicity = nation;
+        if (!scenario.ethnicities[nation]) {
+            scenario.ethnicities[nation] = { provinces: [] };
+        }
+        scenario.ethnicities[nation].provinces.push(id);
+
         rgb = hexToRgb(ethnicityInfo[nation].color);
         nation_ctx = cache_ethnic_map.getContext('2d');
     }
 
     floodFill(nation_ctx, position[0], position[1], [rgb.r, rgb.g, rgb.b]);
     redraw();
-}
-
-
-function hexToRgb(hex) {
-    if (!hex) return null;
-    hex = hex.replace(/^#/, '');
-    if (hex.length === 3) {
-        hex = hex.split('').map(c => c + c).join('');
-    }
-    if (hex.length !== 6) return null;
-    const intVal = parseInt(hex, 16);
-    return {
-        r: (intVal >> 16) & 255,
-        g: (intVal >> 8) & 255,
-        b: intVal & 255
-    };
 }
