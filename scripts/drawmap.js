@@ -134,33 +134,66 @@ function drawTileInfo(ctx, currentScale) {
                 // ===== Draw Armies if exists =====
                 if (provinceInfo[id]?.armies) {
                     for (const nation in provinceInfo[id].armies) {
-                        const count = provinceInfo[id].armies[nation];
+                        const units = provinceInfo[id].armies[nation]; // object like { soldier: 5, archer: 2 }
+
                         let bgColor = "#ccc";
                         if (nationInfo[nation]?.color) {
                             bgColor = darkenColor(nationInfo[nation].color, 0.9);
                         }
 
-                        const text = `🪖${count}`;
-                        ctx.font = `${8 * tileInfoScale}px Lato, sans-serif`;
-                        const textWidth = ctx.measureText(text).width;
-                        const padding = 2 * tileInfoScale;
+                        // loop through each unit type (soldier, archer, plane...)
+                        for (const unitType in units) {
+                            const count = units[unitType];
+                            if (!count) continue; // skip if 0 or undefined
 
-                        // background box
-                        ctx.fillStyle = bgColor;
-                        roundRect(ctx, x - textWidth / 2 - padding, y + yOffset - 6 * tileInfoScale, textWidth + padding * 2, 10 * tileInfoScale, 2 * tileInfoScale, true, false);
+                            // pick emoji based on unit type
+                            let emoji = "";
+                            if (unitType === "soldiers") emoji = "🪖";
+                            else if (unitType === "archers") emoji = "🏹";
+                            else if (unitType === "planes") emoji = "✈️";
+                            else continue; // skip unknown types
 
-                        // outline
-                        ctx.lineWidth = 0.5 * tileInfoScale;
-                        ctx.strokeStyle = "white";
-                        roundRect(ctx, x - textWidth / 2 - padding, y + yOffset - 6 * tileInfoScale, textWidth + padding * 2, 10 * tileInfoScale, 2 * tileInfoScale, false, true);
+                            const text = `${emoji}${count}`;
+                            ctx.font = `${8 * tileInfoScale}px Lato, sans-serif`;
+                            const textWidth = ctx.measureText(text).width;
+                            const padding = 2 * tileInfoScale;
 
-                        // text
-                        ctx.fillStyle = "black";
-                        ctx.fillText(text, x, y + yOffset);
+                            // background box
+                            ctx.fillStyle = bgColor;
+                            roundRect(
+                                ctx,
+                                x - textWidth / 2 - padding,
+                                y + yOffset - 6 * tileInfoScale,
+                                textWidth + padding * 2,
+                                10 * tileInfoScale,
+                                2 * tileInfoScale,
+                                true,
+                                false
+                            );
 
-                        yOffset += 12 * tileInfoScale;
+                            // outline
+                            ctx.lineWidth = 0.5 * tileInfoScale;
+                            ctx.strokeStyle = "white";
+                            roundRect(
+                                ctx,
+                                x - textWidth / 2 - padding,
+                                y + yOffset - 6 * tileInfoScale,
+                                textWidth + padding * 2,
+                                10 * tileInfoScale,
+                                2 * tileInfoScale,
+                                false,
+                                true
+                            );
+
+                            // text
+                            ctx.fillStyle = "black";
+                            ctx.fillText(text, x, y + yOffset);
+
+                            yOffset += 12 * tileInfoScale;
+                        }
                     }
                 }
+
             }
         }
     }

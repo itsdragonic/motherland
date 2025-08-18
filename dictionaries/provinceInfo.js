@@ -1,8 +1,13 @@
 let provinceInfo = {
   "1": {
     armies: {
-      "rome": 10,
-      "parthia": 5
+      "rome": {
+        "soldiers": 5,
+        "archers": 2,
+      },
+      "parthia": {
+        "soldiers": 5
+      }
     }
   },
   "2": {},
@@ -1100,7 +1105,9 @@ let provinceInfo = {
     "owner": "rome",
     "ethnicity": "romans",
     "armies": {
-      "rome": 500,
+      "rome": {
+        "soldiers": 5
+      },
     }
   },
   "548": {
