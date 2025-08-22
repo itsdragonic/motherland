@@ -1,4 +1,4 @@
-const provinceData = {
+const provinceNodes = {
   1: {
     type: 'land',
     neighbors: [828],

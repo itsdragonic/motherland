@@ -7,8 +7,8 @@ function drawProvinces(cache = null) {
     // return cached result if available
     if (cache) return cache;
 
-    // check if provinceData, provinceInfo, and nationInfo exist and have content
-    if (!provinceData || !provinceInfo || !nationInfo || Object.keys(provinceData).length === 0) {
+    // check if provinceNodes, provinceInfo, and nationInfo exist and have content
+    if (!provinceNodes || !provinceInfo || !nationInfo || Object.keys(provinceNodes).length === 0) {
         return null;
     }
 
@@ -23,9 +23,9 @@ function drawProvinces(cache = null) {
 
     // fill each province according to its assigned value
 
-    for (const id in provinceData) {
-        if (!Object.prototype.hasOwnProperty.call(provinceData, id)) continue;
-        const pd = provinceData[id];
+    for (const id in provinceNodes) {
+        if (!Object.prototype.hasOwnProperty.call(provinceNodes, id)) continue;
+        const pd = provinceNodes[id];
         if (!pd || !pd.pos) continue;
 
         const [startX, startY] = pd.pos.map(Math.floor);
@@ -88,9 +88,9 @@ function drawTileInfo(ctx, currentScale) {
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
 
-        for (const id in provinceData) {
-            if (!Object.prototype.hasOwnProperty.call(provinceData, id)) continue;
-            const pos = provinceData[id].pos;
+        for (const id in provinceNodes) {
+            if (!Object.prototype.hasOwnProperty.call(provinceNodes, id)) continue;
+            const pos = provinceNodes[id].pos;
             if (!pos) continue;
 
             const [x, y] = pos;
@@ -216,7 +216,7 @@ function drawNationLabels(ctx, currentScale) {
         if (!provinceIds.length) continue;
 
         for (const id of provinceIds) {
-            const province = provinceData[id];
+            const province = provinceNodes[id];
             if (!province || !province.pos) continue;
             const [x, y] = province.pos;
 

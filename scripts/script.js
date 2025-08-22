@@ -3,13 +3,13 @@ canvas.width = 800;
 canvas.height = 500;
 
 var map_empty = new Image();
-map_empty.src = 'maps/map_empty.png';
+map_empty.src = 'maps/europe/map_empty.png';
 
 var map_provinces = new Image();
-map_provinces.src = 'maps/map_provinces.png';
+map_provinces.src = 'maps/europe/map_provinces.png';
 
 var map_physical = new Image();
-map_physical.src = 'maps/map_physical.png';
+map_physical.src = 'maps/europe/map_physical.png';
 
 var disable_tiles = false;
 var physical_map = false;
@@ -49,9 +49,16 @@ window.onload = function () {
     var offscreenCtx = offscreenCanvas.getContext('2d');
 
     window.redraw = function() {
+        // Turn smoothing on/off depending on zoom
+        const currentScale = ctx.getTransform().a; // current zoom
+        if (currentScale < 1) {
+            ctx.imageSmoothingEnabled = true;
+        } else {
+            ctx.imageSmoothingEnabled = false;
+        }
+
         if (title_screen) {
             // Drawing background of title screen
-            ctx.imageSmoothingEnabled = false;
             ctx.drawImage(map_empty, 0, -250);
             ctx.filter = 'blur(5px)';
             ctx.drawImage(map_provinces, 0, -250);
@@ -84,15 +91,6 @@ window.onload = function () {
             ctx.restore();
 
         } else {
-            const currentScale = ctx.getTransform().a; // current zoom
-
-            // Turn smoothing on/off depending on zoom
-            if (currentScale < 1) {
-                ctx.imageSmoothingEnabled = true;
-            } else {
-                ctx.imageSmoothingEnabled = false;
-            }
-
             // raw map
             drawMap(offscreenCtx);
 

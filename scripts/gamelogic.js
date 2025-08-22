@@ -20,10 +20,10 @@ function clickProvince(ctx, evt) {
     
     // 5. Check each province's position to see if it's red
     let clickedProvinceId = null;
-    for (const id in provinceData) {
-        if (!provinceData[id].pos || provinceData[id].type == 'ocean') continue;
+    for (const id in provinceNodes) {
+        if (!provinceNodes[id].pos || provinceNodes[id].type == 'ocean') continue;
         
-        const [x, y] = provinceData[id].pos;
+        const [x, y] = provinceNodes[id].pos;
         const pixel = detectionCtx.getImageData(x, y, 1, 1).data;
         
         // If this pixel is red (from flood-fill), it's the clicked province
@@ -54,7 +54,7 @@ function clickProvince(ctx, evt) {
 }
 
 function isTileAdjacent(id, nation) {
-    let neighbors = provinceData[id].neighbors;
+    let neighbors = provinceNodes[id].neighbors;
 
     for (let i = 0; i < neighbors.length; i ++) {
         if (display_map == 'owner' && provinceInfo[neighbors[i]].owner == nation) return true;
@@ -64,7 +64,7 @@ function isTileAdjacent(id, nation) {
 }
 
 function changeOwner(id, nation) {
-    const position = provinceData[id].pos;
+    const position = provinceNodes[id].pos;
     let nation_ctx, rgb;
 
     if (display_map === 'owner') {
