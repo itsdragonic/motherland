@@ -97,3 +97,47 @@ function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
     if (fill) ctx.fill();
     if (stroke) ctx.stroke();
 }
+
+// Convert number to Roman numeral
+function toRoman(num) {
+    const lookup = {
+        M: 1000,
+        CM: 900,
+        D: 500,
+        CD: 400,
+        C: 100,
+        XC: 90,
+        L: 50,
+        XL: 40,
+        X: 10,
+        IX: 9,
+        V: 5,
+        IV: 4,
+        I: 1
+    };
+    let roman = '';
+    for (let i in lookup) {
+        while (num >= lookup[i]) {
+            roman += i;
+            num -= lookup[i];
+        }
+    }
+    return roman;
+}
+
+function getUniqueCityName(baseName) {
+    let name = baseName;
+
+    // If name already exists, try "New {baseName}"
+    if (Object.values(cityInfo).some(c => c.name === name)) {
+        name = `New ${baseName}`;
+
+        let counter = 2; // Start with II
+        while (Object.values(cityInfo).some(c => c.name === name)) {
+            name = `New ${baseName} ${toRoman(counter)}`;
+            counter++;
+        }
+    }
+
+    return name;
+}

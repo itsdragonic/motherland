@@ -1,6 +1,6 @@
 let player = {
-    nation: "rome",
-    ethnicity: "romans",
+    nation: "thrace",
+    ethnicity: "thracians",
     gold: 0,
 }
 
@@ -49,8 +49,11 @@ function month(number) {
 
 function updateInfo() {
     let year = game_data.year;
-    if (year < 0) {
-        year = game_data.year + ' BC';
+    if (year == 0) {
+        game_data.year ++;
+        year ++;
+    } else if (year < 0) {
+        year = Math.abs(game_data.year) + ' BC';
     } else if (year < 1000) {
         year = game_data.year + ' AD';
     }
@@ -63,7 +66,7 @@ function updateInfo() {
 function initializeGame() {
     game_data.turn = 1;
     game_data.month = 1;
-    game_data.year = 1;
+    game_data.year = -1;
     loadScenario();
     updateInfo();
 }

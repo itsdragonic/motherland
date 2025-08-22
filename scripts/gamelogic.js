@@ -34,7 +34,7 @@ function clickProvince(ctx, evt) {
     }
     
     // 6. Handle the clicked province
-    if (clickedProvinceId && player.gold > 0) {
+    /*if (clickedProvinceId && player.gold > 0) {
         if (display_map == 'owner') {
             if (isTileAdjacent(clickedProvinceId, player.nation)) {
                 changeOwner(clickedProvinceId, player.nation);
@@ -50,7 +50,61 @@ function clickProvince(ctx, evt) {
         //console.log(clickedProvinceId);
     } else {
         //console.log("No province clicked at", clickX, clickY);
+    }*/
+   if (clickedProvinceId) provinceInfoScreen(clickedProvinceId);
+}
+
+function provinceInfoScreen(id) {
+    let tile_name = document.getElementById('tile_name');
+    if (cityInfo[id]) {
+        tile_name.textContent = cityInfo[id].name;
+    } else {
+        tile_name.textContent = `Province #${id}`;
     }
+
+    const found_city = document.getElementById('found_city');
+
+    found_city.onclick = function () {
+        if (!cityInfo[id]) {
+            // Get owner of this province
+            let owner = provinceInfo[id]?.owner;
+
+            // Fallback
+            let name = `City ${id}`;
+
+            if (owner && nationInfo[owner] && nationInfo[owner].city_names?.length > 0) {
+                let names = nationInfo[owner].city_names;
+
+                // Pick a random unused name (if possible)
+                let available = names.filter(n =>
+                    !Object.values(cityInfo).some(c => c.name === n)
+                );
+
+                if (available.length > 0) {
+                    name = available[Math.floor(Math.random() * available.length)];
+                } else {
+                    // If all used up
+                    let baseName = names[Math.floor(Math.random() * names.length)];
+                    name = getUniqueCityName(baseName);
+                }
+            }
+
+            // Create new city
+            cityInfo[id] = {
+                name: name,
+                population: 1
+            };
+
+            player.gold -= 500;
+            updateInfo();
+            redraw();
+            tile_name.textContent = `${cityInfo[id].name}`;
+
+            console.log(`New city founded:`, cityInfo[id]);
+        } else {
+            console.log(`Province ${id} already has a city:`, cityInfo[id]);
+        }
+    };
 }
 
 function isTileAdjacent(id, nation) {
