@@ -1,1105 +1,1973 @@
 let provinceInfo = {
   "1": {
-    armies: {
+    "armies": {
       "rome": {
         "soldiers": 5,
-        "archers": 2,
+        "archers": 2
       },
       "parthia": {
         "soldiers": 5
       }
-    }
+    },
+    "terrain": "tundra"
   },
-  "2": {},
-  "3": {},
-  "4": {},
-  "5": {},
-  "6": {},
-  "7": {},
-  "8": {},
-  "9": {},
-  "10": {},
-  "11": {},
-  "12": {},
-  "13": {},
-  "14": {},
-  "15": {},
-  "16": {},
-  "17": {},
-  "18": {},
-  "19": {},
-  "20": {},
-  "21": {},
-  "22": {},
-  "23": {},
-  "24": {},
-  "25": {},
-  "26": {},
-  "27": {},
-  "28": {},
-  "29": {},
-  "30": {},
-  "31": {},
-  "32": {},
-  "33": {},
-  "34": {},
-  "35": {},
-  "36": {},
-  "37": {},
-  "38": {},
-  "39": {},
-  "40": {},
-  "41": {},
-  "42": {},
-  "43": {},
-  "44": {},
-  "45": {},
-  "46": {},
-  "47": {},
-  "48": {},
-  "49": {},
-  "50": {},
-  "51": {},
-  "52": {},
-  "53": {},
-  "54": {},
-  "55": {},
-  "56": {},
-  "57": {},
-  "58": {},
-  "59": {},
-  "60": {},
-  "61": {},
-  "62": {},
-  "63": {},
-  "64": {},
-  "65": {},
-  "66": {},
-  "67": {},
-  "68": {},
-  "69": {},
-  "70": {},
-  "71": {},
-  "72": {},
-  "73": {},
-  "74": {},
-  "75": {},
-  "76": {},
-  "77": {},
-  "78": {},
-  "79": {},
-  "80": {},
-  "81": {},
-  "82": {},
-  "83": {},
-  "84": {},
-  "85": {},
-  "86": {},
-  "87": {},
-  "88": {},
-  "89": {},
-  "90": {},
-  "91": {},
-  "92": {},
-  "93": {},
-  "94": {},
-  "95": {},
-  "96": {},
-  "97": {},
-  "98": {},
-  "99": {},
-  "100": {},
-  "101": {},
-  "102": {},
-  "103": {},
-  "104": {},
-  "105": {},
-  "106": {},
-  "107": {},
-  "108": {},
-  "109": {},
-  "110": {},
-  "111": {},
-  "112": {},
-  "113": {},
-  "114": {},
-  "115": {},
-  "116": {},
-  "117": {},
-  "118": {},
-  "119": {},
-  "120": {},
-  "121": {},
-  "122": {},
-  "123": {},
-  "124": {},
-  "125": {},
-  "126": {},
-  "127": {},
-  "128": {},
-  "129": {},
-  "130": {},
-  "131": {},
-  "132": {},
-  "133": {},
-  "134": {},
-  "135": {},
-  "136": {},
-  "137": {},
-  "138": {},
-  "139": {},
-  "140": {},
-  "141": {},
-  "142": {},
-  "143": {},
+  "2": {
+    "terrain": "tundra"
+  },
+  "3": {
+    "terrain": "hills"
+  },
+  "4": {
+    "terrain": "hills"
+  },
+  "5": {
+    "terrain": "tiaga"
+  },
+  "6": {
+    "terrain": "mountains"
+  },
+  "7": {
+    "terrain": "tundra"
+  },
+  "8": {
+    "terrain": "tundra"
+  },
+  "9": {
+    "terrain": "plains"
+  },
+  "10": {
+    "terrain": "tundra"
+  },
+  "11": {
+    "terrain": "mountains"
+  },
+  "12": {
+    "terrain": "plains"
+  },
+  "13": {
+    "terrain": "tiaga"
+  },
+  "14": {
+    "terrain": "tundra"
+  },
+  "15": {
+    "terrain": "plains"
+  },
+  "16": {
+    "terrain": "tiaga"
+  },
+  "17": {
+    "terrain": 0.5
+  },
+  "18": {
+    "terrain": "tiaga"
+  },
+  "19": {
+    "terrain": "tiaga"
+  },
+  "20": {
+    "terrain": "tundra"
+  },
+  "21": {
+    "terrain": "tundra"
+  },
+  "22": {
+    "terrain": "tundra"
+  },
+  "23": {
+    "terrain": "tiaga"
+  },
+  "24": {
+    "terrain": "plains"
+  },
+  "25": {
+    "terrain": "plains"
+  },
+  "26": {
+    "terrain": "plains"
+  },
+  "27": {
+    "terrain": "plains"
+  },
+  "28": {
+    "terrain": "mountains"
+  },
+  "29": {
+    "terrain": "forest"
+  },
+  "30": {
+    "terrain": "tundra"
+  },
+  "31": {
+    "terrain": "plains"
+  },
+  "32": {
+    "terrain": "tundra"
+  },
+  "33": {
+    "terrain": "plains"
+  },
+  "34": {
+    "terrain": "plains"
+  },
+  "35": {
+    "terrain": "plains"
+  },
+  "36": {
+    "terrain": "plains"
+  },
+  "37": {
+    "terrain": "plains"
+  },
+  "38": {
+    "terrain": "plains"
+  },
+  "39": {
+    "terrain": "forest"
+  },
+  "40": {
+    "terrain": "mountains"
+  },
+  "41": {
+    "terrain": "hills"
+  },
+  "42": {
+    "terrain": "plains"
+  },
+  "43": {
+    "terrain": "plains"
+  },
+  "44": {
+    "terrain": "forest"
+  },
+  "45": {
+    "terrain": "tundra"
+  },
+  "46": {
+    "terrain": "mountains"
+  },
+  "47": {
+    "terrain": "forest"
+  },
+  "48": {
+    "terrain": "plains"
+  },
+  "49": {
+    "terrain": "mountains"
+  },
+  "50": {
+    "terrain": "plains"
+  },
+  "51": {
+    "terrain": "plains"
+  },
+  "52": {
+    "terrain": "plains"
+  },
+  "53": {
+    "terrain": "forest"
+  },
+  "54": {
+    "terrain": "forest"
+  },
+  "55": {
+    "terrain": "forest"
+  },
+  "56": {
+    "terrain": "plains"
+  },
+  "57": {
+    "terrain": "plains"
+  },
+  "58": {
+    "terrain": "hills"
+  },
+  "59": {
+    "terrain": "forest"
+  },
+  "60": {
+    "terrain": "forest"
+  },
+  "61": {
+    "terrain": "mountains"
+  },
+  "62": {
+    "terrain": "forest"
+  },
+  "63": {
+    "terrain": "forest"
+  },
+  "64": {
+    "terrain": "forest"
+  },
+  "65": {
+    "terrain": "hills"
+  },
+  "66": {
+    "terrain": "forest"
+  },
+  "67": {
+    "terrain": "forest"
+  },
+  "68": {
+    "terrain": "hills"
+  },
+  "69": {
+    "terrain": "forest"
+  },
+  "70": {
+    "terrain": "forest"
+  },
+  "71": {
+    "terrain": "forest"
+  },
+  "72": {
+    "terrain": "forest"
+  },
+  "73": {
+    "terrain": "hills"
+  },
+  "74": {
+    "terrain": "hills"
+  },
+  "75": {
+    "terrain": "forest"
+  },
+  "76": {
+    "terrain": "forest"
+  },
+  "77": {
+    "terrain": "forest"
+  },
+  "78": {
+    "terrain": "forest"
+  },
+  "79": {
+    "terrain": "mountains"
+  },
+  "80": {
+    "terrain": "forest"
+  },
+  "81": {
+    "terrain": "forest"
+  },
+  "82": {
+    "terrain": "forest"
+  },
+  "83": {
+    "terrain": "forest"
+  },
+  "84": {
+    "terrain": "forest"
+  },
+  "85": {
+    "terrain": "hills"
+  },
+  "86": {
+    "terrain": "plains"
+  },
+  "87": {
+    "terrain": "forest"
+  },
+  "88": {
+    "terrain": "hills"
+  },
+  "89": {
+    "terrain": "plains"
+  },
+  "90": {
+    "terrain": "forest"
+  },
+  "91": {
+    "terrain": "forest"
+  },
+  "92": {
+    "terrain": "plains"
+  },
+  "93": {
+    "terrain": "plains"
+  },
+  "94": {
+    "terrain": "hills"
+  },
+  "95": {
+    "terrain": "mountains"
+  },
+  "96": {
+    "terrain": "plains"
+  },
+  "97": {
+    "terrain": "forest"
+  },
+  "98": {
+    "terrain": "plains"
+  },
+  "99": {
+    "terrain": "hills"
+  },
+  "100": {
+    "terrain": "forest"
+  },
+  "101": {
+    "terrain": "plains"
+  },
+  "102": {
+    "terrain": "hills"
+  },
+  "103": {
+    "terrain": "forest"
+  },
+  "104": {
+    "terrain": "plains"
+  },
+  "105": {
+    "terrain": "forest"
+  },
+  "106": {
+    "terrain": "forest"
+  },
+  "107": {
+    "terrain": "forest"
+  },
+  "108": {
+    "terrain": "forest"
+  },
+  "109": {
+    "terrain": "forest"
+  },
+  "110": {
+    "terrain": "forest"
+  },
+  "111": {
+    "terrain": "plains"
+  },
+  "112": {
+    "terrain": "forest"
+  },
+  "113": {
+    "terrain": "forest"
+  },
+  "114": {
+    "terrain": "hills"
+  },
+  "115": {
+    "terrain": "forest"
+  },
+  "116": {
+    "terrain": "hills"
+  },
+  "117": {
+    "terrain": "hills"
+  },
+  "118": {
+    "terrain": "forest"
+  },
+  "119": {
+    "terrain": "forest"
+  },
+  "120": {
+    "terrain": "plains"
+  },
+  "121": {
+    "terrain": "forest"
+  },
+  "122": {
+    "terrain": "plains"
+  },
+  "123": {
+    "terrain": "forest"
+  },
+  "124": {
+    "terrain": "forest"
+  },
+  "125": {
+    "terrain": "forest"
+  },
+  "126": {
+    "terrain": "plains"
+  },
+  "127": {
+    "terrain": "forest"
+  },
+  "128": {
+    "terrain": "forest"
+  },
+  "129": {
+    "terrain": "forest"
+  },
+  "130": {
+    "terrain": "forest"
+  },
+  "131": {
+    "terrain": "forest"
+  },
+  "132": {
+    "terrain": "forest"
+  },
+  "133": {
+    "terrain": "forest"
+  },
+  "134": {
+    "terrain": "forest"
+  },
+  "135": {
+    "terrain": "forest"
+  },
+  "136": {
+    "terrain": "forest"
+  },
+  "137": {
+    "terrain": "forest"
+  },
+  "138": {
+    "terrain": "plains"
+  },
+  "139": {
+    "terrain": "hills"
+  },
+  "140": {
+    "terrain": "plains"
+  },
+  "141": {
+    "terrain": "forest"
+  },
+  "142": {
+    "terrain": "hills"
+  },
+  "143": {
+    "terrain": "plains"
+  },
   "144": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "145": {},
-  "146": {},
-  "147": {},
-  "148": {},
-  "149": {},
-  "150": {},
-  "151": {},
-  "152": {},
-  "153": {},
-  "154": {},
-  "155": {},
-  "156": {},
-  "157": {},
-  "158": {},
+  "145": {
+    "terrain": "plains"
+  },
+  "146": {
+    "terrain": "forest"
+  },
+  "147": {
+    "terrain": "plains"
+  },
+  "148": {
+    "terrain": "forest"
+  },
+  "149": {
+    "terrain": "plains"
+  },
+  "150": {
+    "terrain": "hills"
+  },
+  "151": {
+    "terrain": "forest"
+  },
+  "152": {
+    "terrain": "forest"
+  },
+  "153": {
+    "terrain": "forest"
+  },
+  "154": {
+    "terrain": "forest"
+  },
+  "155": {
+    "terrain": "plains"
+  },
+  "156": {
+    "terrain": "forest"
+  },
+  "157": {
+    "terrain": "forest"
+  },
+  "158": {
+    "terrain": "forest"
+  },
   "159": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "160": {},
-  "161": {},
-  "162": {},
-  "163": {},
-  "164": {},
-  "165": {},
-  "166": {},
-  "167": {},
-  "168": {},
-  "169": {},
-  "170": {},
-  "171": {},
-  "172": {},
-  "173": {},
-  "174": {},
-  "175": {},
+  "160": {
+    "terrain": "forest"
+  },
+  "161": {
+    "terrain": "forest"
+  },
+  "162": {
+    "terrain": "plains"
+  },
+  "163": {
+    "terrain": "forest"
+  },
+  "164": {
+    "terrain": "forest"
+  },
+  "165": {
+    "terrain": "forest"
+  },
+  "166": {
+    "terrain": "forest"
+  },
+  "167": {
+    "terrain": "plains"
+  },
+  "168": {
+    "terrain": "forest"
+  },
+  "169": {
+    "terrain": "forest"
+  },
+  "170": {
+    "terrain": "plains"
+  },
+  "171": {
+    "terrain": "plains"
+  },
+  "172": {
+    "terrain": "forest"
+  },
+  "173": {
+    "terrain": "forest"
+  },
+  "174": {
+    "terrain": "plains"
+  },
+  "175": {
+    "terrain": "forest"
+  },
   "176": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "177": {},
+  "177": {
+    "terrain": "forest"
+  },
   "178": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "179": {},
-  "180": {},
-  "181": {},
-  "182": {},
-  "183": {},
-  "184": {},
-  "185": {},
-  "186": {},
+  "179": {
+    "terrain": "forest"
+  },
+  "180": {
+    "terrain": "forest"
+  },
+  "181": {
+    "terrain": "forest"
+  },
+  "182": {
+    "terrain": "plains"
+  },
+  "183": {
+    "terrain": "forest"
+  },
+  "184": {
+    "terrain": "plains"
+  },
+  "185": {
+    "terrain": "forest"
+  },
+  "186": {
+    "terrain": "forest"
+  },
   "187": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "188": {},
-  "189": {},
-  "190": {},
-  "191": {},
-  "192": {},
-  "193": {},
-  "194": {},
+  "188": {
+    "terrain": "forest"
+  },
+  "189": {
+    "terrain": "forest"
+  },
+  "190": {
+    "terrain": "forest"
+  },
+  "191": {
+    "terrain": "forest"
+  },
+  "192": {
+    "terrain": "forest"
+  },
+  "193": {
+    "terrain": "forest"
+  },
+  "194": {
+    "terrain": "plains"
+  },
   "195": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "196": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "197": {},
-  "198": {},
-  "199": {},
+  "197": {
+    "terrain": "forest"
+  },
+  "198": {
+    "terrain": "forest"
+  },
+  "199": {
+    "terrain": "forest"
+  },
   "200": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "201": {},
-  "202": {},
+  "201": {
+    "terrain": "forest"
+  },
+  "202": {
+    "terrain": "plains"
+  },
   "203": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "204": {},
-  "205": {},
+  "204": {
+    "terrain": "forest"
+  },
+  "205": {
+    "terrain": "plains"
+  },
   "206": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "207": {},
-  "208": {},
-  "209": {},
+  "207": {
+    "terrain": "plains"
+  },
+  "208": {
+    "terrain": "forest"
+  },
+  "209": {
+    "terrain": "forest"
+  },
   "210": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "211": {},
-  "212": {},
+  "211": {
+    "terrain": "plains"
+  },
+  "212": {
+    "terrain": "forest"
+  },
   "213": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "214": {},
-  "215": {},
-  "216": {},
+  "214": {
+    "terrain": "plains"
+  },
+  "215": {
+    "terrain": "forest"
+  },
+  "216": {
+    "terrain": "forest"
+  },
   "217": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "218": {},
+  "218": {
+    "terrain": "forest"
+  },
   "219": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "220": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "221": {},
+  "221": {
+    "terrain": "plains"
+  },
   "222": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "223": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "224": {},
-  "225": {},
-  "226": {},
-  "227": {},
-  "228": {},
+  "224": {
+    "terrain": "forest"
+  },
+  "225": {
+    "terrain": "forest"
+  },
+  "226": {
+    "terrain": "forest"
+  },
+  "227": {
+    "terrain": "plains"
+  },
+  "228": {
+    "terrain": "plains"
+  },
   "229": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "230": {},
-  "231": {},
-  "232": {},
-  "233": {},
-  "234": {},
+  "230": {
+    "terrain": "marshes"
+  },
+  "231": {
+    "terrain": "forest"
+  },
+  "232": {
+    "terrain": "forest"
+  },
+  "233": {
+    "terrain": "forest"
+  },
+  "234": {
+    "terrain": "hills"
+  },
   "235": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "236": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "237": {},
-  "238": {},
+  "237": {
+    "terrain": "marshes"
+  },
+  "238": {
+    "terrain": "grasslands"
+  },
   "239": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "240": {},
+  "240": {
+    "terrain": "forest"
+  },
   "241": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "242": {},
-  "243": {},
+  "242": {
+    "terrain": "forest"
+  },
+  "243": {
+    "terrain": "grasslands"
+  },
   "244": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "245": {},
-  "246": {},
+  "245": {
+    "terrain": "forest"
+  },
+  "246": {
+    "terrain": "plains"
+  },
   "247": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "248": {},
-  "249": {},
+  "248": {
+    "terrain": "marshes"
+  },
+  "249": {
+    "terrain": "plains"
+  },
   "250": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "251": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "252": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "253": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "254": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "255": {},
-  "256": {},
-  "257": {},
+  "255": {
+    "terrain": "plains"
+  },
+  "256": {
+    "terrain": "forest"
+  },
+  "257": {
+    "terrain": "grasslands"
+  },
   "258": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "259": {},
-  "260": {},
-  "261": {},
+  "259": {
+    "terrain": "plains"
+  },
+  "260": {
+    "terrain": "forest"
+  },
+  "261": {
+    "terrain": "grasslands"
+  },
   "262": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "263": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "264": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "265": {},
+  "265": {
+    "terrain": "forest"
+  },
   "266": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "267": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "268": {},
-  "269": {},
-  "270": {},
+  "268": {
+    "terrain": "plains"
+  },
+  "269": {
+    "terrain": "forest"
+  },
+  "270": {
+    "terrain": "forest"
+  },
   "271": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "272": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "273": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "274": {},
+  "274": {
+    "terrain": "forest"
+  },
   "275": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "276": {},
-  "277": {},
-  "278": {},
-  "279": {},
+  "276": {
+    "terrain": "forest"
+  },
+  "277": {
+    "terrain": "plains"
+  },
+  "278": {
+    "terrain": "forest"
+  },
+  "279": {
+    "terrain": "forest"
+  },
   "280": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "281": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "282": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
-  "283": {},
+  "283": {
+    "terrain": "plains"
+  },
   "284": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "285": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "286": {},
-  "287": {},
+  "286": {
+    "terrain": "forest"
+  },
+  "287": {
+    "terrain": "grasslands"
+  },
   "288": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "289": {},
+  "289": {
+    "terrain": "plains"
+  },
   "290": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "291": {},
+  "291": {
+    "terrain": "forest"
+  },
   "292": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "293": {},
-  "294": {},
+  "293": {
+    "terrain": "grasslands"
+  },
+  "294": {
+    "terrain": "plains"
+  },
   "295": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "296": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "297": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "298": {},
+  "298": {
+    "terrain": "plains"
+  },
   "299": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "300": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "301": {},
-  "302": {},
+  "301": {
+    "terrain": "forest"
+  },
+  "302": {
+    "terrain": "grasslands"
+  },
   "303": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "304": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
-  "305": {},
-  "306": {},
+  "305": {
+    "terrain": "grasslands"
+  },
+  "306": {
+    "terrain": "forest"
+  },
   "307": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "308": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "309": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "310": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "hills"
   },
   "311": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "hills"
   },
-  "312": {},
-  "313": {},
-  "314": {},
+  "312": {
+    "terrain": "grasslands"
+  },
+  "313": {
+    "terrain": "grasslands"
+  },
+  "314": {
+    "terrain": "forest"
+  },
   "315": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "316": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "317": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "318": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "319": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "320": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "321": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "322": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "323": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "324": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "325": {},
+  "325": {
+    "terrain": "plains"
+  },
   "326": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "327": {},
-  "328": {},
+  "327": {
+    "terrain": "forest"
+  },
+  "328": {
+    "terrain": "grasslands"
+  },
   "329": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "330": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "331": {},
-  "332": {},
+  "331": {
+    "terrain": "plains"
+  },
+  "332": {
+    "terrain": "plains"
+  },
   "333": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "334": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "335": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "336": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "337": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "338": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "339": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "340": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "341": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
-  "342": {},
+  "342": {
+    "terrain": "plains"
+  },
   "343": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "344": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "hills"
   },
   "345": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "346": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "347": {},
+  "347": {
+    "terrain": "plains"
+  },
   "348": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "349": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
-  "350": {},
+  "350": {
+    "terrain": "plains"
+  },
   "351": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
-  "352": {},
-  "353": {},
+  "352": {
+    "terrain": "grasslands"
+  },
+  "353": {
+    "terrain": "plains"
+  },
   "354": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "355": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "356": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "357": {},
+  "357": {
+    "terrain": "grasslands"
+  },
   "358": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "359": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "hills"
   },
   "360": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "361": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "hills"
   },
-  "362": {},
+  "362": {
+    "terrain": "plains"
+  },
   "363": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "hills"
   },
   "364": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "365": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
-  "366": {},
-  "367": {},
+  "366": {
+    "terrain": "plains"
+  },
+  "367": {
+    "terrain": "grasslands"
+  },
   "368": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "plains"
   },
   "369": {
     "owner": "rome",
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
   "370": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
-  "371": {},
-  "372": {},
+  "371": {
+    "terrain": "plains"
+  },
+  "372": {
+    "terrain": "drylands"
+  },
   "373": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
-  "374": {},
+  "374": {
+    "terrain": "plains"
+  },
   "375": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "hills"
   },
   "376": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "377": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "378": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "379": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "plains"
   },
-  "380": {},
-  "381": {},
+  "380": {
+    "terrain": "grasslands"
+  },
+  "381": {
+    "terrain": "grasslands"
+  },
   "382": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "383": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "forest"
   },
   "384": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "385": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "plains"
   },
-  "386": {},
-  "387": {},
+  "386": {
+    "terrain": "plains"
+  },
+  "387": {
+    "terrain": "plains"
+  },
   "388": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
-  "389": {},
+  "389": {
+    "terrain": "forest"
+  },
   "390": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
-  "391": {},
+  "391": {
+    "terrain": "forest"
+  },
   "392": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "plains"
   },
   "393": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
-  "394": {},
+  "394": {
+    "terrain": "plains"
+  },
   "395": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
-  "396": {},
-  "397": {},
-  "398": {},
+  "396": {
+    "terrain": "forest"
+  },
+  "397": {
+    "terrain": "drylands"
+  },
+  "398": {
+    "terrain": "plains"
+  },
   "399": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "400": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "mountains"
   },
-  "401": {},
+  "401": {
+    "terrain": "plains"
+  },
   "402": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "plains"
   },
-  "403": {},
+  "403": {
+    "terrain": "forest"
+  },
   "404": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "grasslands"
   },
   "405": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "hills"
   },
   "406": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "407": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
-  "408": {},
+  "408": {
+    "terrain": "forest"
+  },
   "409": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "forest"
   },
   "410": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
-  "411": {},
-  "412": {},
-  "413": {},
+  "411": {
+    "terrain": "grasslands"
+  },
+  "412": {
+    "terrain": "mountains"
+  },
+  "413": {
+    "terrain": "drylands"
+  },
   "414": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "mountains"
   },
   "415": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "plains"
   },
   "416": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "417": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "mountains"
   },
   "418": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "mountains"
   },
   "419": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "forest"
   },
   "420": {
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "421": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "plains"
   },
   "422": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "423": {
-    "ethnicity": "germans"
+    "ethnicity": "germans",
+    "terrain": "forest"
   },
-  "424": {},
-  "425": {},
-  "426": {},
-  "427": {},
-  "428": {},
+  "424": {
+    "terrain": "grasslands"
+  },
+  "425": {
+    "terrain": "grasslands"
+  },
+  "426": {
+    "terrain": "mountains"
+  },
+  "427": {
+    "terrain": "grasslands"
+  },
+  "428": {
+    "terrain": "plains"
+  },
   "429": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "hills"
   },
   "430": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "431": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "mountains"
   },
   "432": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "hills"
   },
   "433": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "mountains"
   },
-  "434": {},
+  "434": {
+    "terrain": "forest"
+  },
   "435": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "plains"
   },
   "436": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "grasslands"
   },
-  "437": {},
+  "437": {
+    "terrain": "grasslands"
+  },
   "438": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
-  "439": {},
-  "440": {},
+  "439": {
+    "terrain": "forest"
+  },
+  "440": {
+    "terrain": "desert"
+  },
   "441": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "mountains"
   },
   "442": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "hills"
   },
-  "443": {},
+  "443": {
+    "terrain": "grasslands"
+  },
   "444": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "445": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "446": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "447": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "forest"
   },
   "448": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "449": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "450": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "plains"
   },
-  "451": {},
+  "451": {
+    "terrain": "grasslands"
+  },
   "452": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "forest"
   },
-  "453": {},
+  "453": {
+    "terrain": "forest"
+  },
   "454": {
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "455": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "mountains"
   },
   "456": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "457": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
-  "458": {},
-  "459": {},
+  "458": {
+    "terrain": "drylands"
+  },
+  "459": {
+    "terrain": "drylands"
+  },
   "460": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
-  "461": {},
+  "461": {
+    "terrain": "plains"
+  },
   "462": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "463": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "464": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
-  "465": {},
+  "465": {
+    "terrain": "forest"
+  },
   "466": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "forest"
   },
-  "467": {},
+  "467": {
+    "terrain": "forest"
+  },
   "468": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "forest"
   },
-  "469": {},
+  "469": {
+    "terrain": "plains"
+  },
   "470": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "forest"
   },
   "471": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "472": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "forest"
   },
   "473": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "474": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
-  "475": {},
-  "476": {},
+  "475": {
+    "terrain": "grasslands"
+  },
+  "476": {
+    "terrain": "desert"
+  },
   "477": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "478": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "479": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "480": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "forest"
   },
   "481": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "grasslands"
   },
   "482": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "483": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "484": {
     "owner": "thrace",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "485": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "486": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "487": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "488": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "hills"
   },
-  "489": {},
+  "489": {
+    "terrain": "desert"
+  },
   "490": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "491": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "492": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "493": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "forest"
   },
   "494": {
     "owner": "rome",
-    "ethnicity": "gauls"
+    "ethnicity": "gauls",
+    "terrain": "hills"
   },
-  "495": {},
+  "495": {
+    "terrain": "drylands"
+  },
   "496": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "497": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "498": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "hills"
   },
   "499": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "forest"
   },
-  "500": {},
+  "500": {
+    "terrain": "drylands"
+  },
   "501": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "502": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "503": {
     "owner": "thrace",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "504": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "hills"
   },
   "505": {
-    "ethnicity": "dacians"
+    "ethnicity": "dacians",
+    "terrain": "forest"
   },
-  "506": {},
+  "506": {
+    "terrain": "forest"
+  },
   "507": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "hills"
   },
   "508": {
     "owner": "thrace",
-    "ethnicity": "thracians"
+    "ethnicity": "thracians",
+    "terrain": "plains"
   },
-  "509": {},
+  "509": {
+    "terrain": "forest"
+  },
   "510": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "511": {
     "owner": "thrace",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "512": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "513": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "514": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "hills"
   },
   "515": {
     "owner": "thrace",
-    "ethnicity": "thracians"
+    "ethnicity": "thracians",
+    "terrain": "plains"
   },
-  "516": {},
-  "517": {},
-  "518": {},
+  "516": {
+    "terrain": "forest"
+  },
+  "517": {
+    "terrain": "grasslands"
+  },
+  "518": {
+    "terrain": "desert"
+  },
   "519": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "520": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "521": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "522": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "523": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "524": {
     "owner": "thrace",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
-  "525": {},
-  "526": {},
+  "525": {
+    "terrain": "mountains"
+  },
+  "526": {
+    "terrain": "plains"
+  },
   "527": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "528": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "529": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "530": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
-  "531": {},
-  "532": {},
-  "533": {},
-  "534": {},
+  "531": {
+    "terrain": "grasslands"
+  },
+  "532": {
+    "terrain": "plains"
+  },
+  "533": {
+    "terrain": "desert"
+  },
+  "534": {
+    "terrain": "plains"
+  },
   "535": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "536": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "537": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "538": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
-  "539": {},
+  "539": {
+    "terrain": "mountains"
+  },
   "540": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "541": {
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "grasslands"
   },
   "542": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "hills"
   },
   "543": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "544": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "545": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "546": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "547": {
     "owner": "rome",
@@ -1107,876 +1975,1216 @@ let provinceInfo = {
     "armies": {
       "rome": {
         "soldiers": 5
-      },
-    }
+      }
+    },
+    "terrain": "plains"
   },
   "548": {
     "owner": "thrace",
-    "ethnicity": "thracians"
+    "ethnicity": "thracians",
+    "terrain": "forest"
   },
-  "549": {},
+  "549": {
+    "terrain": "desert"
+  },
   "550": {
     "owner": "thrace",
-    "ethnicity": "thracians"
+    "ethnicity": "thracians",
+    "terrain": "hills"
   },
   "551": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "552": {
     "owner": "thrace",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "forest"
   },
-  "553": {},
-  "554": {},
-  "555": {},
+  "553": {
+    "terrain": "hills"
+  },
+  "554": {
+    "terrain": "mountains"
+  },
+  "555": {
+    "terrain": "mountains"
+  },
   "556": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "557": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "558": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
-  "559": {},
+  "559": {
+    "terrain": "desert"
+  },
   "560": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "561": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "562": {
     "owner": "thrace",
-    "ethnicity": "thracians"
+    "ethnicity": "thracians",
+    "terrain": "plains"
   },
-  "563": {},
+  "563": {
+    "terrain": "hills"
+  },
   "564": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "565": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "forest"
   },
   "566": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "567": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "568": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "569": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "570": {
     "owner": "thrace",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "571": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "572": {
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "mountains"
   },
   "573": {
     "owner": "thrace",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "574": {
     "owner": "armenia",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "mountains"
   },
   "575": {
     "owner": "thrace",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "576": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "577": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "hills"
   },
   "578": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "579": {
     "owner": "rome",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "hills"
   },
   "580": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "581": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "582": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "583": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "584": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "585": {
     "owner": "thrace",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "586": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "587": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "588": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "589": {
     "owner": "armenia",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "hills"
   },
-  "590": {},
+  "590": {
+    "terrain": "desert"
+  },
   "591": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "592": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "593": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "594": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "595": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "596": {
     "owner": "thrace",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "597": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "598": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "599": {
     "owner": "rome",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "hills"
   },
   "600": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "601": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "602": {
     "owner": "rome",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "plains"
   },
   "603": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "drylands"
   },
   "604": {
     "owner": "armenia",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "hills"
   },
   "605": {
     "owner": "rome",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "hills"
   },
   "606": {
     "owner": "armenia",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "hills"
   },
   "607": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "hills"
   },
   "608": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "609": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "610": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "611": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "612": {
     "owner": "armenia",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "hills"
   },
   "613": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "614": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "615": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "616": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "617": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "618": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "619": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "620": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "621": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "622": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "623": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "624": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "625": {
     "owner": "rome",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "plains"
   },
   "626": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "627": {
     "owner": "armenia",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "hills"
   },
   "628": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "629": {
     "owner": "armenia",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "hills"
   },
   "630": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "631": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "632": {
     "owner": "armenia",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "hills"
   },
   "633": {
     "owner": "armenia",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "hills"
   },
   "634": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "635": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "636": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "637": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "638": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "639": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "drylands"
   },
   "640": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "641": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "642": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "643": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "644": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "645": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "646": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "647": {
     "owner": "armenia",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "plains"
   },
   "648": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
-  "649": {},
+  "649": {
+    "terrain": "plains"
+  },
   "650": {
     "owner": "rome",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "plains"
   },
   "651": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "652": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "653": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "hills"
   },
   "654": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "655": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "656": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "657": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "658": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "659": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "660": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "661": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "662": {
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "663": {
     "owner": "armenia",
-    "ethnicity": "armenians"
+    "ethnicity": "armenians",
+    "terrain": "plains"
   },
   "664": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "665": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "666": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "hills"
   },
   "667": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "plains"
   },
   "668": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "669": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "670": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "671": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "672": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "673": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
   "674": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "675": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "hills"
   },
   "676": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "677": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "forest"
   },
   "678": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "679": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "680": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "681": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "drylands"
   },
   "682": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "683": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "684": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "685": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "686": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "687": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "drylands"
   },
   "688": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "689": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "690": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "691": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "692": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "693": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "694": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "forest"
   },
   "695": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "696": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "forest"
   },
   "697": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "698": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "699": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "700": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "701": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "702": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "703": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "drylands"
   },
   "704": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
-  "705": {},
+  "705": {
+    "terrain": "desert"
+  },
   "706": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "707": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "708": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "709": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "710": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "forest"
   },
   "711": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
-  "712": {},
+  "712": {
+    "terrain": "desert"
+  },
   "713": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "714": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "715": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "716": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "717": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "hills"
   },
-  "718": {},
+  "718": {
+    "terrain": "drylands"
+  },
   "719": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "720": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "721": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "722": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "723": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
-  "724": {},
+  "724": {
+    "terrain": "desert"
+  },
   "725": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "726": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "727": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "728": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "729": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "forest"
   },
   "730": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
   "731": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "732": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "733": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
-  "734": {},
+  "734": {
+    "terrain": "hills"
+  },
   "735": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "hills"
   },
   "736": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
-  "737": {},
+  "737": {
+    "terrain": "desert"
+  },
   "738": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "forest"
   },
   "739": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
-  "740": {},
+  "740": {
+    "terrain": "desert"
+  },
   "741": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "742": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "743": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "744": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
-  "745": {},
-  "746": {},
+  "745": {
+    "terrain": "desert"
+  },
+  "746": {
+    "terrain": "desert"
+  },
   "747": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
-  "748": {},
-  "749": {},
-  "750": {},
-  "751": {},
-  "752": {},
-  "753": {},
-  "754": {},
-  "755": {},
+  "748": {
+    "terrain": "hills"
+  },
+  "749": {
+    "terrain": "desert"
+  },
+  "750": {
+    "terrain": "plains"
+  },
+  "751": {
+    "terrain": "hills"
+  },
+  "752": {
+    "terrain": "desert"
+  },
+  "753": {
+    "terrain": "desert"
+  },
+  "754": {
+    "terrain": "plains"
+  },
+  "755": {
+    "terrain": "hills"
+  },
   "756": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "757": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "758": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
-  "759": {},
+  "759": {
+    "terrain": "hills"
+  },
   "760": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "761": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "forest"
   },
-  "762": {},
+  "762": {
+    "terrain": "desert"
+  },
   "763": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
   "764": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
-  "765": {},
+  "765": {
+    "terrain": "desert"
+  },
   "766": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "plains"
   },
   "767": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "plains"
   },
-  "768": {},
-  "769": {},
-  "770": {},
-  "771": {},
-  "772": {},
+  "768": {
+    "terrain": "drylands"
+  },
+  "769": {
+    "terrain": "drylands"
+  },
+  "770": {
+    "terrain": "desert"
+  },
+  "771": {
+    "terrain": "desert"
+  },
+  "772": {
+    "terrain": "drylands"
+  },
   "773": {
     "owner": "rome",
-    "ethnicity": "romans"
+    "ethnicity": "romans",
+    "terrain": "drylands"
   },
-  "774": {},
+  "774": {
+    "terrain": "desert"
+  },
   "775": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "plains"
   },
   "776": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "777": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
-  "778": {},
+  "778": {
+    "terrain": "desert"
+  },
   "779": {
     "owner": "rome",
-    "ethnicity": "greeks"
+    "ethnicity": "greeks",
+    "terrain": "drylands"
   },
-  "780": {},
+  "780": {
+    "terrain": "desert"
+  },
   "781": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "forest"
   },
-  "782": {},
-  "783": {},
+  "782": {
+    "terrain": "desert"
+  },
+  "783": {
+    "terrain": "drylands"
+  },
   "784": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "forest"
   },
   "785": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "terrain": "hills"
   },
-  "786": {},
+  "786": {
+    "terrain": "drylands"
+  },
   "787": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "desert"
   },
   "788": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "789": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
-  "790": {},
-  "791": {},
-  "792": {},
+  "790": {
+    "terrain": "drylands"
+  },
+  "791": {
+    "terrain": "desert"
+  },
+  "792": {
+    "terrain": "desert"
+  },
   "793": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
-  "794": {},
-  "795": {},
+  "794": {
+    "terrain": "desert"
+  },
+  "795": {
+    "terrain": "drylands"
+  },
   "796": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "797": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
   "798": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "799": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "desert"
   },
   "800": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
-  "801": {},
+  "801": {
+    "terrain": "drylands"
+  },
   "802": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "forest"
   },
-  "803": {},
-  "804": {},
+  "803": {
+    "terrain": "desert"
+  },
+  "804": {
+    "terrain": "desert"
+  },
   "805": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "drylands"
   },
-  "806": {},
+  "806": {
+    "terrain": "desert"
+  },
   "807": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
-  "808": {},
+  "808": {
+    "terrain": "desert"
+  },
   "809": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "forest"
   },
   "810": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "terrain": "forest"
   },
   "811": {
-    "owner": "parthia"
+    "owner": "parthia",
+    "terrain": "hills"
   },
-  "812": {},
+  "812": {
+    "terrain": "desert"
+  },
   "813": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "desert"
   },
   "814": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "desert"
   },
-  "815": {},
+  "815": {
+    "terrain": "drylands"
+  },
   "816": {
     "owner": "parthia",
-    "ethnicity": "parthians"
+    "ethnicity": "parthians",
+    "terrain": "hills"
   },
   "817": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "desert"
   },
-  "818": {},
-  "819": {},
-  "820": {},
-  "821": {},
-  "822": {},
+  "818": {
+    "terrain": "desert"
+  },
+  "819": {
+    "terrain": "desert"
+  },
+  "820": {
+    "terrain": "forest"
+  },
+  "821": {
+    "terrain": "desert"
+  },
+  "822": {
+    "terrain": "desert"
+  },
   "823": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "desert"
   },
-  "824": {},
+  "824": {
+    "terrain": "desert"
+  },
   "825": {
-    "owner": "rome"
+    "owner": "rome",
+    "terrain": "forest"
   },
-  "826": {},
-  "827": {},
+  "826": {
+    "terrain": "hills"
+  },
+  "827": {
+    "terrain": "plains"
+  },
   "828": {},
   "829": {},
   "830": {},

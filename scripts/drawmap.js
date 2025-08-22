@@ -134,7 +134,7 @@ function drawTileInfo(ctx, currentScale) {
                 // ===== Draw Armies if exists =====
                 if (provinceInfo[id]?.armies) {
                     for (const nation in provinceInfo[id].armies) {
-                        const units = provinceInfo[id].armies[nation]; // object like { soldier: 5, archer: 2 }
+                        const units = provinceInfo[id].armies[nation];
 
                         let bgColor = "#ccc";
                         if (nationInfo[nation]?.color) {

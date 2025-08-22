@@ -111,3 +111,74 @@ function changeOwner(id, nation) {
     floodFill(nation_ctx, position[0], position[1], [rgb.r, rgb.g, rgb.b]);
     redraw();
 }
+
+let units_moving = [
+    { path: [1, 3, 4, 2], nation: "rome", unit: "soldiers", count: 3, time_per_tile: 2 }
+];
+
+function updateArmies() {
+    for (let i = units_moving.length - 1; i >= 0; i--) {
+        let move = units_moving[i];
+
+        // decrement timer
+        move.time_per_tile--;
+
+        if (move.time_per_tile <= 0) {
+            // current tile = path[0], next tile = path[1]
+            const currentTile = move.path[0];
+            const nextTile = move.path[1]; 
+            const { nation, unit, count } = move;
+
+            // remove from current tile
+            if (provinceInfo[currentTile]?.armies?.[nation]?.[unit] !== undefined) {
+                provinceInfo[currentTile].armies[nation][unit] -= count;
+                if (provinceInfo[currentTile].armies[nation][unit] <= 0) {
+                    delete provinceInfo[currentTile].armies[nation][unit];
+                }
+            }
+
+            // advance along path
+            move.path.shift(); // remove the current tile
+
+            if (move.path.length === 1) {
+                // arrived at final destination
+                const destination = move.path[0];
+
+                if (!provinceInfo[destination].armies) provinceInfo[destination].armies = {};
+                if (!provinceInfo[destination].armies[nation]) provinceInfo[destination].armies[nation] = {};
+                if (!provinceInfo[destination].armies[nation][unit]) provinceInfo[destination].armies[nation][unit] = 0;
+                provinceInfo[destination].armies[nation][unit] += count;
+
+                // remove this move from units_moving
+                units_moving.splice(i, 1);
+            } else {
+                // not yet at destination → add units to nextTile
+                if (!provinceInfo[nextTile].armies) provinceInfo[nextTile].armies = {};
+                if (!provinceInfo[nextTile].armies[nation]) provinceInfo[nextTile].armies[nation] = {};
+                if (!provinceInfo[nextTile].armies[nation][unit]) provinceInfo[nextTile].armies[nation][unit] = 0;
+                provinceInfo[nextTile].armies[nation][unit] += count;
+
+                // reset movement timer based on terrain
+                let baseTime = 2; // default per step
+                let modifier = 0;
+                switch (provinceInfo[nextTile]?.terrain) {
+                    case "plains":
+                        modifier = -1;
+                        break;
+                    case "hills":
+                        modifier = 2;
+                        break;
+                    case "mountains":
+                        modifier = 3;
+                        break;
+                    default:
+                        modifier = 0;
+                }
+
+                move.time_per_tile = Math.max(1, baseTime + modifier);
+            }
+        }
+    }
+
+    redraw();
+}
