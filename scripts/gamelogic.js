@@ -9,30 +9,30 @@ function clickProvince(ctx, evt) {
     detectionCanvas.width = map_provinces.width;
     detectionCanvas.height = map_provinces.height;
     const detectionCtx = detectionCanvas.getContext('2d');
-    
+
     // 3. Draw the base map (map_empty) onto the temp canvas
     detectionCtx.drawImage(map_provinces, 0, 0);
-    
+
     // 4. Flood-fill from the clicked position with red
     floodFill(detectionCtx, clickX, clickY, [255, 0, 0, 255]); // RGBA red
 
     //cache_nation_map = detectionCanvas;
-    
+
     // 5. Check each province's position to see if it's red
     let clickedProvinceId = null;
     for (const id in provinceNodes) {
         if (!provinceNodes[id].pos || provinceNodes[id].type == 'ocean') continue;
-        
+
         const [x, y] = provinceNodes[id].pos;
         const pixel = detectionCtx.getImageData(x, y, 1, 1).data;
-        
+
         // If this pixel is red (from flood-fill), it's the clicked province
         if (pixel[0] === 255 && pixel[1] === 0 && pixel[2] === 0) {
             clickedProvinceId = id;
             break;
         }
     }
-    
+
     // 6. Handle the clicked province
     /*if (clickedProvinceId && player.gold > 0) {
         if (display_map == 'owner') {
@@ -51,66 +51,106 @@ function clickProvince(ctx, evt) {
     } else {
         //console.log("No province clicked at", clickX, clickY);
     }*/
-   if (clickedProvinceId) provinceInfoScreen(clickedProvinceId);
+    if (clickedProvinceId) provinceInfoScreen(clickedProvinceId);
 }
 
 function provinceInfoScreen(id) {
     let tile_name = document.getElementById('tile_name');
-    if (cityInfo[id]) {
-        tile_name.textContent = cityInfo[id].name;
-    } else {
-        tile_name.textContent = `Province #${id}`;
-    }
+    let tile_population = document.getElementById('tile_population');
 
-    const found_city = document.getElementById('found_city');
+    if (zoomed_out) {
+        if (display_map == 'owner') {
+            let owner = provinceInfo[id].owner;
+            let ownerName = nationInfo[owner].name;
 
-    found_city.onclick = function () {
-        if (!cityInfo[id]) {
-            // Get owner of this province
-            let owner = provinceInfo[id]?.owner;
-
-            // Fallback
-            let name = `City ${id}`;
-
-            if (owner && nationInfo[owner] && nationInfo[owner].city_names?.length > 0) {
-                let names = nationInfo[owner].city_names;
-
-                // Pick a random unused name (if possible)
-                let available = names.filter(n =>
-                    !Object.values(cityInfo).some(c => c.name === n)
-                );
-
-                if (available.length > 0) {
-                    name = available[Math.floor(Math.random() * available.length)];
-                } else {
-                    // If all used up
-                    let baseName = names[Math.floor(Math.random() * names.length)];
-                    name = getUniqueCityName(baseName);
+            // Sum population of all cities in this owner's provinces
+            let totalPop = 0;
+            for (let provId of scenario.nations[owner].provinces) {
+                totalPop += provinceInfo[provId].population;
+                if (cityInfo[provId]) {
+                    totalPop += cityInfo[provId].population;
                 }
             }
 
-            // Create new city
-            cityInfo[id] = {
-                name: name,
-                population: 1
-            };
+            tile_name.textContent = ownerName;
+            tile_population.textContent = `Population: ${(totalPop).toFixed(1)}K`;
 
-            player.gold -= 500;
-            updateInfo();
-            redraw();
-            tile_name.textContent = `${cityInfo[id].name}`;
-
-            console.log(`New city founded:`, cityInfo[id]);
         } else {
-            console.log(`Province ${id} already has a city:`, cityInfo[id]);
+            let eth = provinceInfo[id].ethnicity;
+            let ethName = ethnicityInfo[eth].name;
+
+            // Sum population of all cities in this ethnicity's provinces
+            let totalPop = 0;
+            for (let provId of scenario.ethnicities[eth].provinces) {
+                totalPop += provinceInfo[provId].population;
+                if (cityInfo[provId]) {
+                    totalPop += cityInfo[provId].population;
+                }
+            }
+
+            tile_name.textContent = ethName;
+            tile_population.textContent = `Population: ${(totalPop).toFixed(1)}K`;
         }
-    };
+    } else {
+        if (cityInfo[id]) {
+            tile_name.textContent = cityInfo[id].name;
+            tile_population.textContent = `Population: ${(cityInfo[id].population + provinceInfo[id].population).toFixed(1)}K`;
+        } else {
+            tile_name.textContent = `Province #${id}`;
+            tile_population.textContent = `Population: ${(provinceInfo[id].population).toFixed(1)}K`;
+        }
+
+        const found_city = document.getElementById('found_city');
+
+        found_city.onclick = function () {
+            if (!cityInfo[id] && provinceInfo[id].owner == player.nation) {
+                // Get owner of this province
+                let owner = provinceInfo[id]?.owner;
+
+                // Fallback
+                let name = `City ${id}`;
+
+                if (owner && nationInfo[owner] && nationInfo[owner].city_names?.length > 0) {
+                    let names = nationInfo[owner].city_names;
+
+                    // Pick a random unused name (if possible)
+                    let available = names.filter(n =>
+                        !Object.values(cityInfo).some(c => c.name === n)
+                    );
+
+                    if (available.length > 0) {
+                        name = available[Math.floor(Math.random() * available.length)];
+                    } else {
+                        // If all used up
+                        let baseName = names[Math.floor(Math.random() * names.length)];
+                        name = getUniqueCityName(baseName);
+                    }
+                }
+
+                // Create new city
+                cityInfo[id] = {
+                    name: name,
+                    population: 1
+                };
+
+                player.gold -= 500;
+                updateInfo();
+                redraw();
+                tile_name.textContent = `${cityInfo[id].name}`;
+                tile_population.textContent = `Population: ${(cityInfo[id].population + provinceInfo[id].population).toFixed(1)}K`;
+
+                console.log(`New city founded:`, cityInfo[id]);
+            } else {
+                console.log('Cannot found city here.');
+            }
+        };
+    }
 }
 
 function isTileAdjacent(id, nation) {
     let neighbors = provinceNodes[id].neighbors;
 
-    for (let i = 0; i < neighbors.length; i ++) {
+    for (let i = 0; i < neighbors.length; i++) {
         if (display_map == 'owner' && provinceInfo[neighbors[i]].owner == nation) return true;
         else if (display_map == 'ethnicity' && provinceInfo[neighbors[i]].ethnicity == nation) return true;
     }
@@ -180,7 +220,7 @@ function updateArmies() {
         if (move.time_per_tile <= 0) {
             // current tile = path[0], next tile = path[1]
             const currentTile = move.path[0];
-            const nextTile = move.path[1]; 
+            const nextTile = move.path[1];
             const { nation, unit, count } = move;
 
             // remove from current tile

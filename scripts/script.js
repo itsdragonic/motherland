@@ -14,6 +14,8 @@ map_physical.src = 'maps/europe/map_physical.png';
 var disable_tiles = false;
 var physical_map = false;
 
+var zoomed_out = true;
+
 // Play button
 var title_screen = true;
 document.getElementById('play_button').addEventListener('click', function() {
@@ -55,6 +57,11 @@ window.onload = function () {
             ctx.imageSmoothingEnabled = true;
         } else {
             ctx.imageSmoothingEnabled = false;
+        }
+        if (currentScale < zoomedIn) {
+            zoomed_out = true;
+        } else {
+            zoomed_out = false;
         }
 
         if (title_screen) {
