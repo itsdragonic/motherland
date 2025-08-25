@@ -144,6 +144,66 @@ function provinceInfoScreen(id) {
                 console.log('Cannot found city here.');
             }
         };
+
+        // Army movement
+
+        // Army already clicked
+        if (player.army_info.province) {
+            let path = findShortestPath(Number(player.army_info.province), Number(id));
+
+            units_moving.push({
+                path: path,
+                nation: player.nation,
+                unit: player.army_info.unit,
+                count: player.army_info.count,
+                time_per_tile: 2
+            });
+
+            player.army_info.province = null;
+        }
+
+        // Remove previous army buttons if any
+        let oldArmyDiv = document.getElementById('army_buttons');
+        if (oldArmyDiv) oldArmyDiv.remove();
+
+
+        // Only show when zoomed in and there are armies
+        if (!zoomed_out && provinceInfo[id]?.armies) {
+            let armies = provinceInfo[id].armies;
+            let armyDiv = document.createElement('div');
+            armyDiv.id = 'army_buttons';
+            armyDiv.style.marginTop = '12px';
+
+            // For each nation in armies
+            Object.keys(armies).forEach(nation => {
+                Object.keys(armies[nation]).forEach(unitType => {
+                    let count = armies[nation][unitType];
+                    if (count > 0) {
+                        let btn = document.createElement('button');
+                        btn.textContent = `${nationInfo[nation]?.name || nation} ${unitType} (${count})`;
+                        btn.style.margin = '2px';
+                        btn.onclick = function () {
+                            // Set up for movement: store selected army info
+                            player.army_info = {
+                                province: id,
+                                unit: unitType,
+                                count
+                            };
+                            // Indicate selection visually
+                            Array.from(armyDiv.children).forEach(b => b.disabled = false);
+                            btn.disabled = true;
+                        };
+                        armyDiv.appendChild(btn);
+                    }
+                });
+            });
+
+
+            // Only add if there are any armies
+            if (armyDiv.children.length > 0) {
+                document.getElementById('left_info').appendChild(armyDiv);
+            }
+        }
     }
 }
 

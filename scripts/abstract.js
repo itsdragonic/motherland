@@ -141,3 +141,44 @@ function getUniqueCityName(baseName) {
 
     return name;
 }
+
+function findShortestPath(startId, endId) {
+    // If start and end are the same
+    if (startId === endId) {
+        return [startId];
+    }
+
+    // BFS initialization
+    const queue = [[startId]];
+    const visited = new Set([startId]);
+
+    while (queue.length > 0) {
+        const currentPath = queue.shift();
+        const currentId = currentPath[currentPath.length - 1];
+        const currentNode = provinceNodes[currentId];
+
+        // If current node doesn't exist, skip
+        if (!currentNode) continue;
+
+        // Check all neighbors
+        for (const neighborId of currentNode.neighbors) {
+            // Skip if already visited
+            if (visited.has(neighborId)) continue;
+
+            // Create new path with this neighbor
+            const newPath = [...currentPath, neighborId];
+
+            // Found the destination
+            if (neighborId === endId) {
+                return newPath;
+            }
+
+            // Add to queue and mark visited
+            queue.push(newPath);
+            visited.add(neighborId);
+        }
+    }
+
+    // No path found
+    return null;
+}

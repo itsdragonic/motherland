@@ -1,7 +1,13 @@
 let player = {
-    nation: "thrace",
-    ethnicity: "thracians",
+    nation: "rome",
+    ethnicity: "romans",
     gold: 0,
+
+    army_info: {
+        province: null,
+        unit: null,
+        count: null
+    }
 }
 
 let game_data = {
@@ -66,7 +72,7 @@ function updateInfo() {
 function initializeGame() {
     game_data.turn = 1;
     game_data.month = 1;
-    game_data.year = -1;
+    game_data.year = 1;
     loadScenario();
     updateInfo();
 }
