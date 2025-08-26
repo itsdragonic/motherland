@@ -92,97 +92,132 @@ function provinceInfoScreen(id) {
             tile_population.textContent = `Population: ${(totalPop).toFixed(1)}K`;
         }
     } else {
-        if (cityInfo[id]) {
-            tile_name.textContent = cityInfo[id].name;
-            tile_population.textContent = `Population: ${(cityInfo[id].population + provinceInfo[id].population).toFixed(1)}K`;
+        if (display_map == 'owner') {
+            foundCity(id);
+            armyMovement(id);
+            garrisonProvince(id);
         } else {
-            tile_name.textContent = `Province #${id}`;
-            tile_population.textContent = `Population: ${(provinceInfo[id].population).toFixed(1)}K`;
-        }
-
-        const found_city = document.getElementById('found_city');
-
-        found_city.onclick = function () {
-            if (!cityInfo[id] && provinceInfo[id].owner == player.nation) {
-                // Get owner of this province
-                let owner = provinceInfo[id]?.owner;
-
-                // Fallback
-                let name = `City ${id}`;
-
-                if (owner && nationInfo[owner] && nationInfo[owner].city_names?.length > 0) {
-                    let names = nationInfo[owner].city_names;
-
-                    // Pick a random unused name (if possible)
-                    let available = names.filter(n =>
-                        !Object.values(cityInfo).some(c => c.name === n)
-                    );
-
-                    if (available.length > 0) {
-                        name = available[Math.floor(Math.random() * available.length)];
-                    } else {
-                        // If all used up
-                        let baseName = names[Math.floor(Math.random() * names.length)];
-                        name = getUniqueCityName(baseName);
-                    }
-                }
-
-                // Create new city
-                cityInfo[id] = {
-                    name: name,
-                    population: 1
-                };
-
-                player.gold -= 500;
+            if (isTileAdjacent(id, player.ethnicity) && player.culture > 0) {
+                changeOwner(id, player.ethnicity);
+                player.culture -= 2;
                 updateInfo();
-                redraw();
-                tile_name.textContent = `${cityInfo[id].name}`;
-                tile_population.textContent = `Population: ${(cityInfo[id].population + provinceInfo[id].population).toFixed(1)}K`;
-
-                console.log(`New city founded:`, cityInfo[id]);
-            } else {
-                console.log('Cannot found city here.');
             }
-        };
-
-        // Army movement
-
-        // Army already clicked
-        if (player.army_info.province) {
-            let path = findShortestPath(Number(player.army_info.province), Number(id));
-
-            units_moving.push({
-                path: path,
-                nation: player.nation,
-                unit: player.army_info.unit,
-                count: player.army_info.count,
-                time_per_tile: 2
-            });
-
-            player.army_info.province = null;
         }
+    }
+}
 
-        // Remove previous army buttons if any
-        let oldArmyDiv = document.getElementById('army_buttons');
-        if (oldArmyDiv) oldArmyDiv.remove();
+function foundCity(id) {
+    if (cityInfo[id]) {
+        tile_name.textContent = cityInfo[id].name;
+        tile_population.textContent = `Population: ${(cityInfo[id].population + provinceInfo[id].population).toFixed(1)}K`;
+    } else {
+        tile_name.textContent = `Province #${id}`;
+        tile_population.textContent = `Population: ${(provinceInfo[id].population).toFixed(1)}K`;
+    }
+
+    const found_city = document.getElementById('found_city');
+
+    found_city.onclick = function () {
+        if (!cityInfo[id] && provinceInfo[id].owner == player.nation) {
+            // Get owner of this province
+            let owner = provinceInfo[id]?.owner;
+
+            // Fallback
+            let name = `City ${id}`;
+
+            if (owner && nationInfo[owner] && nationInfo[owner].city_names?.length > 0) {
+                let names = nationInfo[owner].city_names;
+
+                // Pick a random unused name (if possible)
+                let available = names.filter(n =>
+                    !Object.values(cityInfo).some(c => c.name === n)
+                );
+
+                if (available.length > 0) {
+                    name = available[Math.floor(Math.random() * available.length)];
+                } else {
+                    // If all used up
+                    let baseName = names[Math.floor(Math.random() * names.length)];
+                    name = getUniqueCityName(baseName);
+                }
+            }
+
+            // Create new city
+            cityInfo[id] = {
+                name: name,
+                population: 1
+            };
+
+            player.gold -= 500;
+            updateInfo();
+            redraw();
+            tile_name.textContent = `${cityInfo[id].name}`;
+            tile_population.textContent = `Population: ${(cityInfo[id].population + provinceInfo[id].population).toFixed(1)}K`;
+
+            console.log(`New city founded:`, cityInfo[id]);
+        } else {
+            console.log('Cannot found city here.');
+        }
+    };
+}
+
+function garrisonProvince(id) {
+    if (provinceInfo[id]?.armies && !provinceInfo[id].owner) {
+        let garrisonDiv = document.createElement('div');
+        garrisonDiv.id = 'garrison_buttons';
+        garrisonDiv.style.marginTop = '12px';
+        let btn = document.createElement('button');
+        btn.textContent = `Garrison Province: 50 Gold`;
+        btn.style.margin = '2px';
+        btn.onclick = function () {
+            changeOwner(id, player.nation);
+            player.gold -= 50;
+            updateInfo();
+            btn.remove();
+        }
+        garrisonDiv.appendChild(btn);
+        document.getElementById('left_info').appendChild(garrisonDiv);
+    }
+}
+
+function armyMovement(id) {
+    // Army already clicked
+    if (player.army_info.province) {
+        let path = findShortestPath(Number(player.army_info.province), Number(id));
+
+        units_moving.push({
+            path: path,
+            nation: player.nation,
+            unit: player.army_info.unit,
+            count: player.army_info.count,
+            time_per_tile: 2
+        });
+
+        player.army_info.province = null;
+    }
+
+    // Remove previous army buttons if any
+    let oldArmyDiv = document.getElementById('army_buttons');
+    if (oldArmyDiv) oldArmyDiv.remove();
 
 
-        // Only show when zoomed in and there are armies
-        if (!zoomed_out && provinceInfo[id]?.armies) {
-            let armies = provinceInfo[id].armies;
-            let armyDiv = document.createElement('div');
-            armyDiv.id = 'army_buttons';
-            armyDiv.style.marginTop = '12px';
+    // Only show when zoomed in and there are armies
+    if (provinceInfo[id]?.armies) {
+        let armies = provinceInfo[id].armies;
+        let armyDiv = document.createElement('div');
+        armyDiv.id = 'army_buttons';
+        armyDiv.style.marginTop = '12px';
 
-            // For each nation in armies
-            Object.keys(armies).forEach(nation => {
-                Object.keys(armies[nation]).forEach(unitType => {
-                    let count = armies[nation][unitType];
-                    if (count > 0) {
-                        let btn = document.createElement('button');
-                        btn.textContent = `${nationInfo[nation]?.name || nation} ${unitType} (${count})`;
-                        btn.style.margin = '2px';
-                        btn.onclick = function () {
+        // For each nation in armies
+        Object.keys(armies).forEach(nation => {
+            Object.keys(armies[nation]).forEach(unitType => {
+                let count = armies[nation][unitType];
+                if (count > 0) {
+                    let btn = document.createElement('button');
+                    btn.textContent = `${nationInfo[nation]?.name || nation} ${unitType} (${count})`;
+                    btn.style.margin = '2px';
+                    btn.onclick = function () {
+                        if (player.nation == nation) {
                             // Set up for movement: store selected army info
                             player.army_info = {
                                 province: id,
@@ -192,17 +227,17 @@ function provinceInfoScreen(id) {
                             // Indicate selection visually
                             Array.from(armyDiv.children).forEach(b => b.disabled = false);
                             btn.disabled = true;
-                        };
-                        armyDiv.appendChild(btn);
-                    }
-                });
+                        }
+                    };
+                    armyDiv.appendChild(btn);
+                }
             });
+        });
 
 
-            // Only add if there are any armies
-            if (armyDiv.children.length > 0) {
-                document.getElementById('left_info').appendChild(armyDiv);
-            }
+        // Only add if there are any armies
+        if (armyDiv.children.length > 0) {
+            document.getElementById('left_info').appendChild(armyDiv);
         }
     }
 }

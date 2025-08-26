@@ -2,6 +2,7 @@ let player = {
     nation: "rome",
     ethnicity: "romans",
     gold: 0,
+    culture: 0,
 
     army_info: {
         province: null,
@@ -18,6 +19,7 @@ let game_data = {
 
 const display = {
     gold: document.getElementById('gold_display'),
+    culture: document.getElementById('culture_display'),
     player: document.getElementById('player_display'),
     year: document.getElementById('year_display')
 };
@@ -54,6 +56,7 @@ function month(number) {
 }
 
 function updateInfo() {
+    // Time info
     let year = game_data.year;
     if (year == 0) {
         game_data.year ++;
@@ -65,7 +68,9 @@ function updateInfo() {
     }
     display.year.innerText = `${month(game_data.month)} ${year}`;
 
+    // Other info
     display.gold.innerText = `Gold: ${player.gold}`;
+    display.culture.innerText = `Cultural Influence: ${player.culture}`;
     display.player.innerText = nationInfo[player.nation].name;
 }
 
@@ -73,6 +78,14 @@ function initializeGame() {
     game_data.turn = 1;
     game_data.month = 1;
     game_data.year = 1;
+
+    // Keybinds
+    document.addEventListener('keydown', e => {
+        if (e.code === 'Space') {
+            nextTurn();
+        }
+    });
+
     loadScenario();
     updateInfo();
 }
@@ -84,6 +97,7 @@ function runTurn() {
     // Running the turn
 
     player.gold += 50 // temporary
+    player.culture += 2
     updateInfo();
 }
 
@@ -96,9 +110,3 @@ function nextTurn() {
     }
     runTurn();
 }
-
-document.addEventListener('keydown', e => {
-    if (e.code === 'Space') {
-        nextTurn();
-    }
-});
