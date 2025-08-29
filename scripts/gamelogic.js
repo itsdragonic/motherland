@@ -34,23 +34,6 @@ function clickProvince(ctx, evt) {
     }
 
     // 6. Handle the clicked province
-    /*if (clickedProvinceId && player.gold > 0) {
-        if (display_map == 'owner') {
-            if (isTileAdjacent(clickedProvinceId, player.nation)) {
-                changeOwner(clickedProvinceId, player.nation);
-            }
-        } else if (display_map == 'ethnicity') {
-            if (isTileAdjacent(clickedProvinceId, player.ethnicity)) {
-                changeOwner(clickedProvinceId, player.ethnicity);
-            }
-        }
-        
-        player.gold -= 100;
-        updateInfo();
-        //console.log(clickedProvinceId);
-    } else {
-        //console.log("No province clicked at", clickX, clickY);
-    }*/
     if (clickedProvinceId) provinceInfoScreen(clickedProvinceId);
 }
 
@@ -97,10 +80,9 @@ function provinceInfoScreen(id) {
             armyMovement(id);
             garrisonProvince(id);
         } else {
-            if (isTileAdjacent(id, player.ethnicity) && player.culture > 0) {
+            if (isTileAdjacent(id, player.ethnicity) && scenario.ethnicities[player.ethnicity].culture > 0) {
                 changeOwner(id, player.ethnicity);
-                player.culture -= 2;
-                updateInfo();
+                changeValue("ethnicities",player.ethnicity,"culture",-2);
             }
         }
     }
@@ -148,8 +130,7 @@ function foundCity(id) {
                 population: 1
             };
 
-            player.gold -= 500;
-            updateInfo();
+            changeValue("nations",player.nation,"gold",-500);
             redraw();
             tile_name.textContent = `${cityInfo[id].name}`;
             tile_population.textContent = `Population: ${(cityInfo[id].population + provinceInfo[id].population).toFixed(1)}K`;
@@ -171,8 +152,7 @@ function garrisonProvince(id) {
         btn.style.margin = '2px';
         btn.onclick = function () {
             changeOwner(id, player.nation);
-            player.gold -= 50;
-            updateInfo();
+            changeValue("nations",player.nation,"gold",-50);
             btn.remove();
         }
         garrisonDiv.appendChild(btn);
@@ -250,6 +230,30 @@ function isTileAdjacent(id, nation) {
         else if (display_map == 'ethnicity' && provinceInfo[neighbors[i]].ethnicity == nation) return true;
     }
     return false;
+}
+
+function changeValue(type, nation, name, amount) {
+    let target = scenario[type][nation];
+
+    if (!target) {
+        console.warn(`Nation/ethnicity "${nation}" not found in type "${type}"`);
+        return;
+    }
+
+    if (Array.isArray(target[name])) {
+        // If it's an array, treat "amount" as a province id to push
+        if (!target[name].includes(amount)) {
+            target[name].push(amount);
+        }
+    } else if (typeof target[name] === "number") {
+        // If it's a number, increment
+        target[name] += amount;
+    } else {
+        console.warn(`Property "${name}" is not numeric or array in ${nation}`);
+        return;
+    }
+
+    updateInfo();
 }
 
 function changeOwner(id, nation) {

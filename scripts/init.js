@@ -1,8 +1,6 @@
 let player = {
     nation: "rome",
     ethnicity: "romans",
-    gold: 0,
-    culture: 0,
 
     army_info: {
         province: null,
@@ -19,6 +17,7 @@ let game_data = {
 
 const display = {
     gold: document.getElementById('gold_display'),
+    stability: document.getElementById('stability_display'),
     culture: document.getElementById('culture_display'),
     player: document.getElementById('player_display'),
     year: document.getElementById('year_display')
@@ -69,8 +68,9 @@ function updateInfo() {
     display.year.innerText = `${month(game_data.month)} ${year}`;
 
     // Other info
-    display.gold.innerText = `Gold: ${player.gold}`;
-    display.culture.innerText = `Cultural Influence: ${player.culture}`;
+    display.gold.innerText = `🪙${scenario.nations[player.nation].gold}`;
+    display.stability.innerText = `⚖️${scenario.nations[player.nation].stability}%`;
+    display.culture.innerText = `🎭${scenario.ethnicities[player.ethnicity].culture}`;
     display.player.innerText = nationInfo[player.nation].name;
 }
 
@@ -87,6 +87,18 @@ function initializeGame() {
     });
 
     loadScenario();
+
+    const nations = Object.values(scenario.nations);
+    nations.forEach(nation => {
+        nation.gold = 0;
+        nation.stability = 70;
+    });
+
+    const ethnicities = Object.values(scenario.ethnicities);
+    ethnicities.forEach(ethnicity => {
+        ethnicity.culture = 0;
+    });
+
     updateInfo();
 }
 
@@ -96,8 +108,17 @@ function runTurn() {
 
     // Running the turn
 
-    player.gold += 50 // temporary
-    player.culture += 2
+    const nations = Object.values(scenario.nations);
+    nations.forEach(nation => {
+        nation.gold += 10;
+        nation.stability += Math.round(Math.random() * (2 - (-2)) + (-2));
+    });
+
+    const ethnicities = Object.values(scenario.ethnicities);
+    ethnicities.forEach(ethnicity => {
+        ethnicity.culture += 2;
+    });
+    
     updateInfo();
 }
 
