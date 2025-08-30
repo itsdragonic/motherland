@@ -64,6 +64,15 @@ window.onload = function () {
             zoomed_out = false;
         }
 
+        if (game_data.load_maps) {
+            // Loading
+            display_map = 'ethnicity';
+            drawMap(offscreenCtx);
+            display_map = 'owner';
+            drawMap(offscreenCtx);
+            game_data.load_maps = false;
+        }
+
         if (title_screen) {
             // Drawing background of title screen
             ctx.drawImage(map_empty, 0, -250);

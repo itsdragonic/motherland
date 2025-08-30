@@ -1,6 +1,6 @@
 let player = {
-    nation: 'rome',
-    ethnicity: 'romans',
+    nation: 'thrace',
+    ethnicity: 'thracians',
 
     army_info: {
         province: null,
@@ -17,6 +17,7 @@ let game_data = {
     turn: 1,
     month: 1,
     year: 1,
+    load_maps: false
 }
 
 const display = {
@@ -73,6 +74,8 @@ function updateInfo() {
 
     // Other info
     display.gold.innerText = `🪙${scenario.nations[player.nation].gold}`;
+    display.gold.title = `Gold (+${goldFormula(scenario.nations[player.nation])})`;
+
     display.stability.innerText = `⚖️${scenario.nations[player.nation].stability}%`;
     display.culture.innerText = `🎭${scenario.ethnicities[player.ethnicity].culture}`;
     display.player.innerText = nationInfo[player.nation].name;
@@ -82,6 +85,7 @@ function initializeGame() {
     game_data.turn = 1;
     game_data.month = 1;
     game_data.year = 1;
+    game_data.load_maps = true;
 
     // Keybinds
     document.addEventListener('keydown', e => {
@@ -111,19 +115,18 @@ function runTurn() {
     updateArmies();
 
     // Running the turn
-
-    const nations = Object.values(scenario.nations);
-    nations.forEach(nation => {
-        nation.gold += 10;
+    for (const name in scenario.nations) {
+        const nation = scenario.nations[name];
+        nation.gold += goldFormula(nation);
         nation.stability += Math.round(Math.random() * (2 - (-2)) + (-2));
-    });
+    }
 
     for (const name in scenario.ethnicities) {
         const ethnicity = scenario.ethnicities[name];
         ethnicity.culture += 2;
 
         //if (name == player.ethnicity) continue;
-        aiEthnicity(name); // or aiEthnicity(name, ethnicity) if needed
+        aiEthnicity(name);
     }
     
     updateInfo();
@@ -147,4 +150,35 @@ function aiEthnicity(ethnicity) {
     if (provinceNodes[randomNumber].type == 'land' && !provinceInfo[randomNumber].ethnicity) {
         changeOwner(randomNumber, 'ethnicities', ethnicity);
     }
+}
+
+function goldFormula(nation) {
+    let gold = 0;
+    for (let i = 0; i < nation.provinces.length; i ++) {
+        let id = nation.provinces[i];
+        let province_gold = 0;
+        let terrain_bonus = 1;
+        province_gold += provinceInfo[id].population * 0.005;
+        switch (provinceInfo[id].terrain) {
+            case 'plains':
+                terrain_bonus = 1.25;
+                break;
+            case 'forest':
+                terrain_bonus = 1.5;
+                break;
+            case 'grasslands':
+                terrain_bonus = 0.6;
+                break;
+            case 'desert':
+                terrain_bonus = 0.1;
+                break;
+            case 'mountains':
+                terrain_bonus = 0.7;
+                break;
+        }
+        province_gold *= terrain_bonus;
+
+        gold += province_gold;
+    }
+    return Math.round(gold);
 }

@@ -399,8 +399,11 @@ function updateArmies() {
                     case "hills":
                         modifier = 2;
                         break;
-                    case "mountains":
+                    case "desert":
                         modifier = 3;
+                        break;
+                    case "mountains":
+                        modifier = 4;
                         break;
                     default:
                         modifier = 0;
