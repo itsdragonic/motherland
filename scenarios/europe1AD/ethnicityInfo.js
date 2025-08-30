@@ -32,17 +32,18 @@ const ethnicityInfo = {
         "name": "Greeks",
         "color": "#e2007e",
     },
+
     "sarmatians": {
         "name": "Sarmatians",
         "color": "#ffb45e",
     },
     "britons": {
-        "name": "Gauls",
+        "name": "Britons",
         "color": "#00eacf",
         "group": "celts",
     },
     "scots": {
-        "name": "Gauls",
+        "name": "Picts",
         "color": "#00b7ea",
         "group": "celts",
     },
@@ -50,5 +51,14 @@ const ethnicityInfo = {
         "name": "Hiberni",
         "color": "#00ea94",
         "group": "celts",
+    },
+    "lusitanians": {
+        "name": "Lusitanians",
+        "color": "#036893",
+        "group": "celts",
+    },
+    "finns": {
+        "name": "Finns",
+        "color": "#d2d5fc",
     },
 }

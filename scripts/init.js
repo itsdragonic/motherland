@@ -1,12 +1,16 @@
 let player = {
-    nation: "rome",
-    ethnicity: "romans",
+    nation: 'rome',
+    ethnicity: 'romans',
 
     army_info: {
         province: null,
         unit: null,
         count: null
     }
+}
+
+let ai = {
+    difficulty: 1 // 0 | 1 | 2 = easy, medium, hard
 }
 
 let game_data = {
@@ -114,10 +118,13 @@ function runTurn() {
         nation.stability += Math.round(Math.random() * (2 - (-2)) + (-2));
     });
 
-    const ethnicities = Object.values(scenario.ethnicities);
-    ethnicities.forEach(ethnicity => {
+    for (const name in scenario.ethnicities) {
+        const ethnicity = scenario.ethnicities[name];
         ethnicity.culture += 2;
-    });
+
+        //if (name == player.ethnicity) continue;
+        aiEthnicity(name); // or aiEthnicity(name, ethnicity) if needed
+    }
     
     updateInfo();
 }
@@ -130,4 +137,14 @@ function nextTurn() {
         game_data.month++;
     }
     runTurn();
+}
+
+function aiEthnicity(ethnicity) {
+    let neighbors = neighboringProvinces(ethnicity);
+    const randomIndex = Math.floor(Math.random() * neighbors.length);
+    const randomNumber = neighbors[randomIndex];
+
+    if (provinceNodes[randomNumber].type == 'land' && !provinceInfo[randomNumber].ethnicity) {
+        changeOwner(randomNumber, 'ethnicities', ethnicity);
+    }
 }

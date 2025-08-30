@@ -81,7 +81,7 @@ function provinceInfoScreen(id) {
             garrisonProvince(id);
         } else {
             if (isTileAdjacent(id, player.ethnicity) && scenario.ethnicities[player.ethnicity].culture > 0) {
-                changeOwner(id, player.ethnicity);
+                changeOwner(id, 'ethnicities', player.ethnicity);
                 changeValue("ethnicities",player.ethnicity,"culture",-2);
             }
         }
@@ -151,8 +151,8 @@ function garrisonProvince(id) {
         btn.textContent = `Garrison Province: 50 Gold`;
         btn.style.margin = '2px';
         btn.onclick = function () {
-            changeOwner(id, player.nation);
-            changeValue("nations",player.nation,"gold",-50);
+            changeOwner(id, 'nations', player.nation);
+            changeValue('nations',player.nation,'gold',-50);
             btn.remove();
         }
         garrisonDiv.appendChild(btn);
@@ -256,11 +256,49 @@ function changeValue(type, nation, name, amount) {
     updateInfo();
 }
 
-function changeOwner(id, nation) {
+function neighboringProvinces(territory, kind = "auto") {
+    let provinces = [];
+
+    // resolve provinces based on kind
+    if ((kind === "nation" || kind === "auto") && scenario?.nations?.[territory]?.provinces) {
+        provinces = scenario.nations[territory].provinces;
+        kind = "nation";
+    } else if ((kind === "ethnicity" || kind === "auto") && scenario?.ethnicities?.[territory]?.provinces) {
+        provinces = scenario.ethnicities[territory].provinces;
+        kind = "ethnicity";
+    } else {
+        return []; // unknown territory
+    }
+
+    // normalize ids to strings to avoid "1" vs 1 issues
+    const toKey = (id) => String(id);
+    const territorySet = new Set(provinces.map(toKey));
+    const borderSet = new Set();
+
+    for (const prov of provinces) {
+        const node = provinceNodes[prov];
+        if (!node || !Array.isArray(node.neighbors)) continue;
+
+        for (const nb of node.neighbors) {
+            const nbKey = toKey(nb);
+            if (!territorySet.has(nbKey)) {
+                borderSet.add(nbKey);
+            }
+        }
+    }
+
+    // convert back to numbers when possible
+    return Array.from(borderSet).map(k => {
+        const n = Number(k);
+        return Number.isNaN(n) ? k : n;
+    });
+}
+
+function changeOwner(id, type, nation) {
     const position = provinceNodes[id].pos;
     let nation_ctx, rgb;
 
-    if (display_map === 'owner') {
+    if (type === 'nations') {
         if (!nationInfo[nation]) return;
 
         // --- remove from old owner in scenario ---
@@ -280,7 +318,7 @@ function changeOwner(id, nation) {
         rgb = hexToRgb(nationInfo[nation].color);
         nation_ctx = cache_nation_map.getContext('2d');
     }
-    else if (display_map === 'ethnicity') {
+    else if (type === 'ethnicities') {
         if (!ethnicityInfo[nation]) return;
 
         // --- remove from old ethnicity in scenario ---

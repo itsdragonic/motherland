@@ -94,11 +94,13 @@ let provinceInfo = {
   },
   "22": {
     "terrain": "tundra",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "23": {
     "terrain": "tiaga",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "24": {
     "terrain": "plains",
@@ -126,7 +128,8 @@ let provinceInfo = {
   },
   "30": {
     "terrain": "tundra",
-    "population": 0
+    "population": 0,
+    "ethnicity": "finns"
   },
   "31": {
     "terrain": "plains",
@@ -138,7 +141,8 @@ let provinceInfo = {
   },
   "33": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "34": {
     "terrain": "plains",
@@ -154,11 +158,13 @@ let provinceInfo = {
   },
   "37": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "38": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "39": {
     "terrain": "forest",
@@ -174,11 +180,13 @@ let provinceInfo = {
   },
   "42": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "43": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "44": {
     "terrain": "forest",
@@ -186,7 +194,8 @@ let provinceInfo = {
   },
   "45": {
     "terrain": "tundra",
-    "population": 0
+    "population": 0,
+    "ethnicity": "finns"
   },
   "46": {
     "terrain": "mountains",
@@ -194,7 +203,8 @@ let provinceInfo = {
   },
   "47": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "48": {
     "terrain": "plains",
@@ -206,11 +216,13 @@ let provinceInfo = {
   },
   "50": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "51": {
     "terrain": "plains",
-    "population": 0
+    "population": 0,
+    "ethnicity": "finns"
   },
   "52": {
     "terrain": "plains",
@@ -226,7 +238,8 @@ let provinceInfo = {
   },
   "55": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "56": {
     "terrain": "plains",
@@ -246,7 +259,8 @@ let provinceInfo = {
   },
   "60": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "61": {
     "terrain": "mountains",
@@ -258,11 +272,13 @@ let provinceInfo = {
   },
   "63": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "64": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "65": {
     "terrain": "hills",
@@ -270,7 +286,8 @@ let provinceInfo = {
   },
   "66": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "67": {
     "terrain": "forest",
@@ -290,11 +307,13 @@ let provinceInfo = {
   },
   "71": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "72": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "73": {
     "terrain": "hills",
@@ -306,15 +325,18 @@ let provinceInfo = {
   },
   "75": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "76": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "77": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "78": {
     "terrain": "forest",
@@ -338,7 +360,8 @@ let provinceInfo = {
   },
   "83": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "84": {
     "terrain": "forest",
@@ -350,7 +373,8 @@ let provinceInfo = {
   },
   "86": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "87": {
     "terrain": "forest",
@@ -362,7 +386,8 @@ let provinceInfo = {
   },
   "89": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "90": {
     "terrain": "forest",
@@ -374,11 +399,13 @@ let provinceInfo = {
   },
   "92": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "93": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "94": {
     "terrain": "hills",
@@ -390,7 +417,8 @@ let provinceInfo = {
   },
   "96": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "97": {
     "terrain": "forest",
@@ -410,7 +438,8 @@ let provinceInfo = {
   },
   "101": {
     "terrain": "plains",
-    "population": 119.2
+    "population": 119.2,
+    "ethnicity": "finns"
   },
   "102": {
     "terrain": "hills",
@@ -422,7 +451,8 @@ let provinceInfo = {
   },
   "104": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "finns"
   },
   "105": {
     "terrain": "forest",
@@ -470,7 +500,8 @@ let provinceInfo = {
   },
   "116": {
     "terrain": "hills",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "scots"
   },
   "117": {
     "terrain": "hills",
@@ -514,7 +545,8 @@ let provinceInfo = {
   },
   "127": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "128": {
     "terrain": "forest",
@@ -542,7 +574,8 @@ let provinceInfo = {
   },
   "134": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "135": {
     "terrain": "forest",
@@ -562,7 +595,8 @@ let provinceInfo = {
   },
   "139": {
     "terrain": "hills",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "scots"
   },
   "140": {
     "terrain": "plains",
@@ -574,7 +608,8 @@ let provinceInfo = {
   },
   "142": {
     "terrain": "hills",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "scots"
   },
   "143": {
     "terrain": "plains",
@@ -607,7 +642,8 @@ let provinceInfo = {
   },
   "150": {
     "terrain": "hills",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "scots"
   },
   "151": {
     "terrain": "forest",
@@ -639,7 +675,8 @@ let provinceInfo = {
   },
   "158": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "scots"
   },
   "159": {
     "ethnicity": "germans",
@@ -668,7 +705,8 @@ let provinceInfo = {
   },
   "165": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "166": {
     "terrain": "forest",
@@ -688,11 +726,13 @@ let provinceInfo = {
   },
   "170": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "scots"
   },
   "171": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "britons"
   },
   "172": {
     "terrain": "forest",
@@ -717,7 +757,8 @@ let provinceInfo = {
   },
   "177": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "scots"
   },
   "178": {
     "ethnicity": "germans",
@@ -734,7 +775,8 @@ let provinceInfo = {
   },
   "181": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "182": {
     "terrain": "plains",
@@ -742,7 +784,8 @@ let provinceInfo = {
   },
   "183": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "irish"
   },
   "184": {
     "terrain": "plains",
@@ -750,7 +793,8 @@ let provinceInfo = {
   },
   "185": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "irish"
   },
   "186": {
     "terrain": "forest",
@@ -783,11 +827,13 @@ let provinceInfo = {
   },
   "193": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "194": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "britons"
   },
   "195": {
     "ethnicity": "germans",
@@ -809,7 +855,8 @@ let provinceInfo = {
   },
   "199": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "200": {
     "ethnicity": "germans",
@@ -835,7 +882,8 @@ let provinceInfo = {
   },
   "205": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "britons"
   },
   "206": {
     "ethnicity": "germans",
@@ -848,11 +896,13 @@ let provinceInfo = {
   },
   "208": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "irish"
   },
   "209": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "britons"
   },
   "210": {
     "ethnicity": "germans",
@@ -865,7 +915,8 @@ let provinceInfo = {
   },
   "212": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "irish"
   },
   "213": {
     "ethnicity": "germans",
@@ -906,7 +957,8 @@ let provinceInfo = {
   },
   "221": {
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "britons"
   },
   "222": {
     "owner": "rome",
@@ -926,7 +978,8 @@ let provinceInfo = {
   },
   "225": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "irish"
   },
   "226": {
     "terrain": "forest",
@@ -938,7 +991,8 @@ let provinceInfo = {
   },
   "228": {
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "irish"
   },
   "229": {
     "ethnicity": "germans",
@@ -959,11 +1013,13 @@ let provinceInfo = {
   },
   "233": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "234": {
     "terrain": "hills",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "britons"
   },
   "235": {
     "owner": "rome",
@@ -982,7 +1038,8 @@ let provinceInfo = {
   },
   "238": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "239": {
     "ethnicity": "germans",
@@ -1000,11 +1057,13 @@ let provinceInfo = {
   },
   "242": {
     "terrain": "forest",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "britons"
   },
   "243": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "244": {
     "ethnicity": "germans",
@@ -1013,11 +1072,13 @@ let provinceInfo = {
   },
   "245": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "irish"
   },
   "246": {
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "irish"
   },
   "247": {
     "ethnicity": "germans",
@@ -1030,7 +1091,8 @@ let provinceInfo = {
   },
   "249": {
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "britons"
   },
   "250": {
     "ethnicity": "germans",
@@ -1060,7 +1122,8 @@ let provinceInfo = {
   },
   "255": {
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "irish"
   },
   "256": {
     "terrain": "forest",
@@ -1068,7 +1131,8 @@ let provinceInfo = {
   },
   "257": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "258": {
     "ethnicity": "germans",
@@ -1085,7 +1149,8 @@ let provinceInfo = {
   },
   "261": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "262": {
     "owner": "rome",
@@ -1107,7 +1172,8 @@ let provinceInfo = {
   },
   "265": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "irish"
   },
   "266": {
     "ethnicity": "germans",
@@ -1121,11 +1187,13 @@ let provinceInfo = {
   },
   "268": {
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "britons"
   },
   "269": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "britons"
   },
   "270": {
     "terrain": "forest",
@@ -1157,11 +1225,13 @@ let provinceInfo = {
   },
   "276": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "277": {
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "britons"
   },
   "278": {
     "terrain": "forest",
@@ -1191,7 +1261,8 @@ let provinceInfo = {
   },
   "283": {
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "britons"
   },
   "284": {
     "ethnicity": "germans",
@@ -1205,11 +1276,13 @@ let provinceInfo = {
   },
   "286": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "287": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "288": {
     "ethnicity": "germans",
@@ -1218,7 +1291,8 @@ let provinceInfo = {
   },
   "289": {
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "britons"
   },
   "290": {
     "ethnicity": "germans",
@@ -1236,11 +1310,13 @@ let provinceInfo = {
   },
   "293": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "294": {
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "britons"
   },
   "295": {
     "owner": "rome",
@@ -1261,7 +1337,8 @@ let provinceInfo = {
   },
   "298": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "britons"
   },
   "299": {
     "ethnicity": "germans",
@@ -1279,7 +1356,8 @@ let provinceInfo = {
   },
   "302": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "303": {
     "ethnicity": "germans",
@@ -1294,7 +1372,8 @@ let provinceInfo = {
   },
   "305": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "306": {
     "terrain": "forest",
@@ -1329,11 +1408,13 @@ let provinceInfo = {
   },
   "312": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "313": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "314": {
     "terrain": "forest",
@@ -1397,7 +1478,8 @@ let provinceInfo = {
   },
   "325": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "326": {
     "owner": "rome",
@@ -1411,7 +1493,8 @@ let provinceInfo = {
   },
   "328": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "329": {
     "owner": "rome",
@@ -1430,7 +1513,8 @@ let provinceInfo = {
   },
   "332": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "333": {
     "ethnicity": "germans",
@@ -1510,7 +1594,8 @@ let provinceInfo = {
   },
   "347": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "348": {
     "owner": "rome",
@@ -1534,11 +1619,13 @@ let provinceInfo = {
   },
   "352": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "353": {
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "sarmatians"
   },
   "354": {
     "owner": "rome",
@@ -1559,7 +1646,8 @@ let provinceInfo = {
   },
   "357": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "358": {
     "owner": "rome",
@@ -1605,11 +1693,13 @@ let provinceInfo = {
   },
   "366": {
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "sarmatians"
   },
   "367": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "368": {
     "ethnicity": "germans",
@@ -1629,11 +1719,13 @@ let provinceInfo = {
   },
   "371": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "372": {
     "terrain": "drylands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "373": {
     "owner": "rome",
@@ -1674,11 +1766,13 @@ let provinceInfo = {
   },
   "380": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "381": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "382": {
     "owner": "rome",
@@ -1717,7 +1811,8 @@ let provinceInfo = {
   },
   "389": {
     "terrain": "forest",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "sarmatians"
   },
   "390": {
     "owner": "rome",
@@ -1742,7 +1837,8 @@ let provinceInfo = {
   },
   "394": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "395": {
     "owner": "rome",
@@ -1751,15 +1847,18 @@ let provinceInfo = {
   },
   "396": {
     "terrain": "forest",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "sarmatians"
   },
   "397": {
     "terrain": "drylands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "398": {
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "399": {
     "owner": "rome",
@@ -1783,12 +1882,14 @@ let provinceInfo = {
   },
   "403": {
     "terrain": "forest",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "sarmatians"
   },
   "404": {
     "owner": "rome",
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "405": {
     "ethnicity": "dacians",
@@ -1798,7 +1899,8 @@ let provinceInfo = {
   "406": {
     "owner": "rome",
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "sarmatians"
   },
   "407": {
     "owner": "rome",
@@ -1823,7 +1925,8 @@ let provinceInfo = {
   },
   "411": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "412": {
     "terrain": "mountains",
@@ -1831,7 +1934,8 @@ let provinceInfo = {
   },
   "413": {
     "terrain": "drylands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "414": {
     "owner": "rome",
@@ -1847,7 +1951,8 @@ let provinceInfo = {
   "416": {
     "owner": "rome",
     "terrain": "plains",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "417": {
     "owner": "rome",
@@ -1889,11 +1994,13 @@ let provinceInfo = {
   },
   "424": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "425": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "426": {
     "terrain": "mountains",
@@ -1901,7 +2008,8 @@ let provinceInfo = {
   },
   "427": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "428": {
     "terrain": "plains",
@@ -1915,7 +2023,8 @@ let provinceInfo = {
   "430": {
     "owner": "rome",
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "431": {
     "owner": "rome",
@@ -1951,7 +2060,8 @@ let provinceInfo = {
   },
   "437": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "438": {
     "owner": "rome",
@@ -1965,7 +2075,8 @@ let provinceInfo = {
   },
   "440": {
     "terrain": "desert",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "441": {
     "owner": "rome",
@@ -1980,7 +2091,8 @@ let provinceInfo = {
   },
   "443": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "444": {
     "owner": "rome",
@@ -2023,7 +2135,8 @@ let provinceInfo = {
   },
   "451": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "452": {
     "owner": "rome",
@@ -2055,15 +2168,18 @@ let provinceInfo = {
   "457": {
     "owner": "rome",
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "458": {
     "terrain": "drylands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "459": {
     "terrain": "drylands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "460": {
     "owner": "rome",
@@ -2103,7 +2219,8 @@ let provinceInfo = {
   },
   "467": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "468": {
     "owner": "rome",
@@ -2145,11 +2262,13 @@ let provinceInfo = {
   },
   "475": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "476": {
     "terrain": "desert",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "477": {
     "owner": "rome",
@@ -2183,7 +2302,8 @@ let provinceInfo = {
   "482": {
     "owner": "rome",
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "483": {
     "owner": "rome",
@@ -2221,7 +2341,8 @@ let provinceInfo = {
   },
   "489": {
     "terrain": "desert",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "490": {
     "owner": "rome",
@@ -2254,7 +2375,8 @@ let provinceInfo = {
   },
   "495": {
     "terrain": "drylands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "496": {
     "owner": "rome",
@@ -2280,7 +2402,8 @@ let provinceInfo = {
   },
   "500": {
     "terrain": "drylands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "501": {
     "owner": "rome",
@@ -2311,7 +2434,8 @@ let provinceInfo = {
   },
   "506": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "507": {
     "owner": "rome",
@@ -2327,7 +2451,8 @@ let provinceInfo = {
   },
   "509": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "510": {
     "owner": "rome",
@@ -2366,15 +2491,18 @@ let provinceInfo = {
   },
   "516": {
     "terrain": "forest",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "517": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "518": {
     "terrain": "desert",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "519": {
     "owner": "rome",
@@ -2438,7 +2566,8 @@ let provinceInfo = {
   },
   "531": {
     "terrain": "grasslands",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "532": {
     "terrain": "plains",
@@ -2446,7 +2575,8 @@ let provinceInfo = {
   },
   "533": {
     "terrain": "desert",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "534": {
     "terrain": "plains",
@@ -2534,7 +2664,8 @@ let provinceInfo = {
   },
   "549": {
     "terrain": "desert",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "550": {
     "owner": "thrace",
@@ -2582,7 +2713,8 @@ let provinceInfo = {
   },
   "559": {
     "terrain": "desert",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "560": {
     "owner": "rome",
@@ -2753,7 +2885,8 @@ let provinceInfo = {
   },
   "590": {
     "terrain": "desert",
-    "population": 20.4
+    "population": 20.4,
+    "ethnicity": "sarmatians"
   },
   "591": {
     "owner": "rome",
@@ -2793,12 +2926,14 @@ let provinceInfo = {
   "597": {
     "owner": "rome",
     "terrain": "forest",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "lusitanians"
   },
   "598": {
     "owner": "rome",
     "terrain": "forest",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "lusitanians"
   },
   "599": {
     "owner": "rome",
@@ -2862,7 +2997,8 @@ let provinceInfo = {
   "609": {
     "owner": "rome",
     "terrain": "plains",
-    "population": 69.2
+    "population": 69.2,
+    "ethnicity": "lusitanians"
   },
   "610": {
     "owner": "rome",
