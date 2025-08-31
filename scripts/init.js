@@ -1,6 +1,6 @@
 let player = {
-    nation: 'thrace',
-    ethnicity: 'thracians',
+    nation: 'rome',
+    ethnicity: 'romans',
 
     army_info: {
         province: null,
@@ -10,7 +10,8 @@ let player = {
 }
 
 let ai = {
-    difficulty: 1 // 0 | 1 | 2 = easy, medium, hard
+    difficulty: 1, // 0 | 1 | 2 = easy, medium, hard
+    historical: true,
 }
 
 let game_data = {
@@ -74,7 +75,7 @@ function updateInfo() {
 
     // Other info
     display.gold.innerText = `🪙${scenario.nations[player.nation].gold}`;
-    display.gold.title = `Gold (+${goldFormula(scenario.nations[player.nation])})`;
+    display.gold.title = `Gold (+${goldFormula(player.nation)})`;
 
     display.stability.innerText = `⚖️${scenario.nations[player.nation].stability}%`;
     display.culture.innerText = `🎭${scenario.ethnicities[player.ethnicity].culture}`;
@@ -117,7 +118,7 @@ function runTurn() {
     // Running the turn
     for (const name in scenario.nations) {
         const nation = scenario.nations[name];
-        nation.gold += goldFormula(nation);
+        nation.gold += goldFormula(name);
         nation.stability += Math.round(Math.random() * (2 - (-2)) + (-2));
     }
 
@@ -152,13 +153,19 @@ function aiEthnicity(ethnicity) {
     }
 }
 
-function goldFormula(nation) {
+function goldFormula(territory) {
+    let nation = scenario.nations[territory];
     let gold = 0;
     for (let i = 0; i < nation.provinces.length; i ++) {
         let id = nation.provinces[i];
         let province_gold = 0;
         let terrain_bonus = 1;
-        province_gold += provinceInfo[id].population * 0.005;
+
+        // population
+        province_gold += provinceInfo[id].population * 0.001;
+        if (cityInfo[id]?.population) province_gold += cityInfo[id].population * 0.01;
+
+        // terrain
         switch (provinceInfo[id].terrain) {
             case 'plains':
                 terrain_bonus = 1.25;
@@ -177,6 +184,13 @@ function goldFormula(nation) {
                 break;
         }
         province_gold *= terrain_bonus;
+
+        // core ethnicities
+        if (provinceInfo[id]?.ethnicity && nation?.ruler) {
+            if (provinceInfo[id].ethnicity == nation.ruler) {
+                province_gold *= 10;
+            }
+        }
 
         gold += province_gold;
     }
