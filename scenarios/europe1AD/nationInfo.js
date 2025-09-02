@@ -49,8 +49,8 @@ const nationInfo = {
         ],
     },
     "parthia": {
-        "name": "Partia",
-        "empire_name": "Partian Empire",
+        "name": "Parthia",
+        "empire_name": "Parthian Empire",
         "color": "#eaa329",
         "city_names": [
             "Nisa",

@@ -280,6 +280,13 @@ function drawNationLabels(ctx, currentScale) {
             ctx.font = `bold ${fontSize}px Lato, Arial`;
         }
 
+        // minimum font size
+        const minFontSize = 6;
+        if (fontSize < minFontSize) {
+            fontSize = minFontSize;
+            ctx.font = `bold ${fontSize}px Lato, Arial`;
+        }
+
         let textWidth = ctx.measureText(displayName).width;
         let textHeight = fontSize;
         let collision = true;
@@ -304,10 +311,8 @@ function drawNationLabels(ctx, currentScale) {
             }
         }
 
-        if (fontSize >= 6) {
-            ctx.fillText(displayName, nation.avgX, nation.avgY);
-            placedLabels.push({ x: nation.avgX, y: nation.avgY, w: textWidth, h: textHeight });
-        }
+        ctx.fillText(displayName, nation.avgX, nation.avgY);
+        placedLabels.push({ x: nation.avgX, y: nation.avgY, w: textWidth, h: textHeight });
     }
 
     ctx.restore();

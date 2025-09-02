@@ -67,10 +67,19 @@ function darkenColor(hex, factor = 0.8) {
 function hexToRgb(hex) {
     if (!hex) return null;
     hex = hex.replace(/^#/, '');
+    
+    // Expand shorthand (#abc → #aabbcc)
     if (hex.length === 3) {
         hex = hex.split('').map(c => c + c).join('');
     }
+    
+    // Ignore alpha if present (#rrggbbaa → #rrggbb)
+    if (hex.length === 8) {
+        hex = hex.slice(0, 6);
+    }
+    
     if (hex.length !== 6) return null;
+    
     const intVal = parseInt(hex, 16);
     return {
         r: (intVal >> 16) & 255,
