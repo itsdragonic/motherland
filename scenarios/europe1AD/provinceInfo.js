@@ -650,7 +650,7 @@ let provinceInfo = {
   "131": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "132": {
     "terrain": "forest",
@@ -660,7 +660,7 @@ let provinceInfo = {
   "133": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "134": {
     "terrain": "forest",
@@ -670,7 +670,7 @@ let provinceInfo = {
   "135": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "136": {
     "terrain": "forest",
@@ -720,7 +720,7 @@ let provinceInfo = {
   "145": {
     "terrain": "plains",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "146": {
     "ethnicity": "uralics",
@@ -735,7 +735,7 @@ let provinceInfo = {
   "148": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "149": {
     "terrain": "plains",
@@ -760,17 +760,17 @@ let provinceInfo = {
   "153": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "154": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "155": {
     "terrain": "plains",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "156": {
     "ethnicity": "uralics",
@@ -795,12 +795,12 @@ let provinceInfo = {
   "160": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "161": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "162": {
     "terrain": "plains",
@@ -810,12 +810,12 @@ let provinceInfo = {
   "163": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "164": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "165": {
     "terrain": "forest",
@@ -825,7 +825,7 @@ let provinceInfo = {
   "166": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "167": {
     "terrain": "plains",
@@ -835,7 +835,7 @@ let provinceInfo = {
   "168": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "169": {
     "ethnicity": "uralics",
@@ -855,22 +855,22 @@ let provinceInfo = {
   "172": {
     "terrain": "forest",
     "population": 69.2,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "173": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "174": {
     "terrain": "plains",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "175": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "176": {
     "ethnicity": "germans",
@@ -895,7 +895,7 @@ let provinceInfo = {
   "180": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "181": {
     "terrain": "forest",
@@ -905,7 +905,7 @@ let provinceInfo = {
   "182": {
     "terrain": "plains",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "183": {
     "terrain": "forest",
@@ -925,7 +925,7 @@ let provinceInfo = {
   "186": {
     "terrain": "forest",
     "population": 69.2,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "187": {
     "ethnicity": "germans",
@@ -935,22 +935,22 @@ let provinceInfo = {
   "188": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "189": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "190": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "191": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "192": {
     "ethnicity": "uralics",
@@ -980,12 +980,12 @@ let provinceInfo = {
   "197": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "198": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "199": {
     "terrain": "forest",
@@ -1000,12 +1000,12 @@ let provinceInfo = {
   "201": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "202": {
     "terrain": "plains",
     "population": 69.2,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "203": {
     "ethnicity": "germans",
@@ -1030,7 +1030,7 @@ let provinceInfo = {
   "207": {
     "terrain": "plains",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "208": {
     "terrain": "forest",
@@ -1050,7 +1050,7 @@ let provinceInfo = {
   "211": {
     "terrain": "plains",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "212": {
     "terrain": "forest",
@@ -1065,17 +1065,17 @@ let provinceInfo = {
   "214": {
     "terrain": "plains",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "215": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "216": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "217": {
     "ethnicity": "germans",
@@ -1085,7 +1085,7 @@ let provinceInfo = {
   "218": {
     "terrain": "forest",
     "population": 20.4,
-    "ethnicity": "baltics"
+    "ethnicity": "balts"
   },
   "219": {
     "owner": "rome",
