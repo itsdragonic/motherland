@@ -3,21 +3,9 @@ const ethnicityInfo = {
         "name": "Romans",
         "color": "#e10a0a",
     },
-    "greeks": {
-        "name": "Greeks",
-        "color": "#e2007e",
-    },
-    "thracians": {
-        "name": "Thracians",
-        "color": "#636473",
-    },
     "armenians": {
         "name": "Armenians",
         "color": "#ae5a3d",
-    },
-    "dacians": {
-        "name": "Dacians",
-        "color": "#282d50",
     },
 
     // germans
@@ -73,6 +61,21 @@ const ethnicityInfo = {
     "celtiberians": {
         "name": "Celtiberians",
         "color": "#68cdd8ff",
+        "group": "celtic",
+    },
+    "belgae": {
+        "name": "Belgae",
+        "color": "#6eebaaff",
+        "group": "celtic",
+    },
+    "helvetii": {
+        "name": "Helvetii",
+        "color": "#8ed8c3ff",
+        "group": "celtic",
+    },
+    "boii": {
+        "name": "Boii",
+        "color": "#61e1efff",
         "group": "celtic",
     },
     "scordisci": {
@@ -150,6 +153,52 @@ const ethnicityInfo = {
         "group": "georgian",
     },
 
+    // slavs
+    "slavs": {
+        "name": "Slavs",
+        "color": "#f89a2eff",
+        "group": "slavic",
+    },
+
+    // balkanic
+    "greeks": {
+        "name": "Greeks",
+        "color": "#e2007e",
+        "group": "balkan",
+    },
+    "thracians": {
+        "name": "Thracians",
+        "color": "#636473",
+        "group": "balkan",
+    },
+    "dacians": {
+        "name": "Dacians",
+        "color": "#282d50",
+        "group": "balkan",
+    },
+    "illyrians": {
+        "name": "Illyrians",
+        "color": "#233294",
+        "group": "balkan",
+    },
+    "phrygians": {
+        "name": "Phrygians",
+        "color": "#5968c7ff",
+        "group": "balkan",
+    },
+
+    // anatolian
+    "cappadocians": {
+        "name": "Cappadocians",
+        "color": "#68a6b2ff",
+        "group": "anatolian",
+    },
+    "isaurians": {
+        "name": "Isaurians",
+        "color": "#78cbdcff",
+        "group": "anatolian",
+    },
+
     // african
     "berbers": {
         "name": "Berbers",
@@ -179,17 +228,17 @@ const ethnicityInfo = {
         "name": "Basques",
         "color": "#dbd7bfff",
     },
+    "aquitani": {
+        "name": "Aquitani",
+        "color": "#bfdbd9ff",
+    },
     "lusitanians": {
         "name": "Lusitanians",
         "color": "#036893",
     },
-    "illyrians": {
-        "name": "Illyrians",
-        "color": "#233294",
-    },
-    "slavs": {
-        "name": "Slavs",
-        "color": "#ab6c00",
+    "turdetani": {
+        "name": "Turdetani",
+        "color": "#786982ff",
     },
     "balts": {
         "name": "Balts",
